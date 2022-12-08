@@ -80,3 +80,108 @@ environmental_format <- environmental %>%
               select(projectDescriptionID, trapVisitID, visitTime, visitTime2, visitTypeID, siteID, trapPositionID),
             by = c("trapVisitID" = "trapVisitID", "projectDescriptionID" = "projectDescriptionID"))
 write_csv(environmental_format, here::here("data", "environmental.csv"))
+
+
+# inspect data files ------------------------------------------------------
+
+# catch
+catch <- read_csv(here::here("data", "catch.csv")) |>
+  glimpse()
+
+unique(catch$projectDescriptionID)
+unique(catch$catchRawID)
+unique(catch$trapVisitID)
+unique(catch$releaseID)
+unique(catch$taxonID)
+unique(catch$atCaptureRunID)
+unique(catch$atCaptureRunMethodID)
+unique(catch$finalRunID)
+sum(is.na(catch$finalRunID))/length(catch$finalRunID) # some NAs here
+unique(catch$finalRunMethodID)
+sum(is.na(catch$finalRunMethodID))/length(catch$finalRunMethodID) # some NAs here - are these the same columns?
+unique(catch$fishOriginID)
+unique(catch$lifeStageID)
+plot(catch$forkLength)
+sum(is.na(catch$forkLength))/length(catch$forkLength) # some NAs here
+plot(catch$totalLength)
+sum(is.na(catch$totalLength))/length(catch$totalLength) # many NAs here
+plot(catch$weight)
+sum(is.na(catch$weight))/length(catch$weight) # almost all NAs
+plot(catch$n)
+unique(catch$randomID)
+unique(catch$actualCountID)
+unique(catch$mortID)
+range(catch$visitTime)
+range(catch$visitTime2)
+unique(catch$visitTypeID)
+unique(catch$siteID)
+unique(catch$trapPositionID)
+
+# release
+release <- read_csv(here::here("data", "release.csv")) |>
+  glimpse()
+
+unique(release$projectDescriptionID)
+unique(release$releaseID)
+unique(release$releasePurposeID)
+unique(release$markedTaxonID)
+unique(release$markedRunID)
+unique(release$markedLifeStageID)
+sum(is.na(release$markedLifeStageID))/length(release$markedLifeStageID) # 0.81 NAs
+unique(release$markedFishOriginID)
+unique(release$sourceOfFishSiteID)
+sum(is.na(release$sourceOfFishSiteID))/length(release$sourceOfFishSiteID) # 0.54 NAs
+unique(release$releaseSiteID)
+unique(release$releaseSubSiteID)
+sum(is.na(release$releaseSubSiteID))/length(release$releaseSubSiteID) # 0.02 NAs
+plot(release$nMortWhileHandling)
+sum(is.na(release$nMortWhileHandling))/length(release$nMortWhileHandling) # 0.98 NAs
+plot(release$nMortAtCheck)
+sum(is.na(release$nMortAtCheck))/length(release$nMortAtCheck) # 0.24 NAs
+plot(release$nReleased)
+unique(release$releaseTime)
+unique(release$releaseLightConditionID)
+sum(is.na(release$releaseLightConditionID))/length(release$releaseLightConditionID) # 0.23 NAs
+unique(release$testDays)
+unique(release$includeTestID)
+unique(release$appliedMarkTypeID)
+sum(is.na(release$appliedMarkTypeID))/length(release$appliedMarkTypeID) # 0.005 NAs
+unique(release$appliedMarkColorID)
+sum(is.na(release$appliedMarkColorID))/length(release$appliedMarkColorID) # 0.005 NAs
+unique(release$appliedMarkPositionID)
+sum(is.na(release$appliedMarkPositionID))/length(release$appliedMarkPositionID) # 0.005 NAs
+unique(release$appliedMarkCode) # 100% NAs
+
+# trap
+trap <- read_csv(here::here("data", "trap.csv")) |> glimpse()
+unique(trap$projectDescriptionID)
+unique(trap$trapVisitID)
+unique(trap$siteID)
+unique(trap$trapPositionID)
+unique(trap$visitTime)
+unique(trap$visitTime2)
+unique(trap$visitTypeID)
+unique(trap$fishProcessedID)
+unique(trap$inThalwegID)
+unique(trap$trapFunctioningID)
+unique(trap$counterAtStart)
+unique(trap$counterAtEnd)
+unique(trap$rpmRevolutionsAtStart)
+unique(trap$rpmSecondsAtStart)
+unique(trap$rpmRevolutionsAtEnd)
+unique(trap$rpmSecondsAtEnd)
+unique(trap$halfConeID)
+unique(trap$includeCatchID)
+unique(trap$debrisVolumeCatID)
+unique(trap$debrisVolume)
+unique(trap$debrisVolumeUnits)
+
+
+# environmental
+environmental <- read_csv(here::here("data", "environmental.csv")) |>
+  glimpse()
+
+unique(environmental$siteID)
+
+# mark_existing
+mark_existing <- read_csv(here::here("data", "mark_existing.csv")) |> glimpse()
