@@ -88,6 +88,8 @@ write_csv(environmental_format, here::here("data", "environmental.csv"))
 catch <- read_csv(here::here("data", "catch.csv")) |>
   glimpse()
 
+# TODO NAs in some columns
+# TODO definition for finalRunMethodID?
 unique(catch$projectDescriptionID)
 unique(catch$catchRawID)
 unique(catch$trapVisitID)
@@ -102,11 +104,11 @@ sum(is.na(catch$finalRunMethodID))/length(catch$finalRunMethodID) # some NAs her
 unique(catch$fishOriginID)
 unique(catch$lifeStageID)
 plot(catch$forkLength)
-sum(is.na(catch$forkLength))/length(catch$forkLength) # some NAs here
+sum(is.na(catch$forkLength))/length(catch$forkLength) # 0.18 NAs
 plot(catch$totalLength)
-sum(is.na(catch$totalLength))/length(catch$totalLength) # many NAs here
+sum(is.na(catch$totalLength))/length(catch$totalLength) # 0.89 NAs
 plot(catch$weight)
-sum(is.na(catch$weight))/length(catch$weight) # almost all NAs
+sum(is.na(catch$weight))/length(catch$weight) # 0.9998 NAs
 plot(catch$n)
 unique(catch$randomID)
 unique(catch$actualCountID)
@@ -121,6 +123,7 @@ unique(catch$trapPositionID)
 release <- read_csv(here::here("data", "release.csv")) |>
   glimpse()
 
+# TODO: NAs in some columns
 unique(release$projectDescriptionID)
 unique(release$releaseID)
 unique(release$releasePurposeID)
@@ -154,6 +157,11 @@ unique(release$appliedMarkCode) # 100% NAs
 
 # trap
 trap <- read_csv(here::here("data", "trap.csv")) |> glimpse()
+
+# TODO some NAs in columns
+# TODO Descriptions for several variables: inThalwegID, counterAtStart, counteratEnd, etc.
+# TODO units for rpmSecondsAtStart, rpmSecondsAtEnd
+# TODO measurement scale for some variables (debris Volume)
 unique(trap$projectDescriptionID)
 unique(trap$trapVisitID)
 unique(trap$siteID)
@@ -164,24 +172,39 @@ unique(trap$visitTypeID)
 unique(trap$fishProcessedID)
 unique(trap$inThalwegID)
 unique(trap$trapFunctioningID)
-unique(trap$counterAtStart)
-unique(trap$counterAtEnd)
-unique(trap$rpmRevolutionsAtStart)
-unique(trap$rpmSecondsAtStart)
-unique(trap$rpmRevolutionsAtEnd)
+unique(trap$counterAtStart) # 0.94 NAs
+unique(trap$counterAtEnd) # 0.34 NAs
+unique(trap$rpmRevolutionsAtStart) # 0.14 NAs
+unique(trap$rpmSecondsAtStart) # 0.14 NAs
+unique(trap$rpmRevolutionsAtEnd) # 0.11 NAs
 unique(trap$rpmSecondsAtEnd)
 unique(trap$halfConeID)
 unique(trap$includeCatchID)
-unique(trap$debrisVolumeCatID)
-unique(trap$debrisVolume)
-unique(trap$debrisVolumeUnits)
+unique(trap$debrisVolumeCatID) # 100% NAs
+unique(trap$debrisVolume) # 100% NAs
+unique(trap$debrisVolumeUnits) # 100% NAs
 
 
 # environmental
 environmental <- read_csv(here::here("data", "environmental.csv")) |>
   glimpse()
 
+# TODO some columns have NAs
+# TODO some descriptions not clear for variables
+sum(is.na(environmental$discharge))/nrow(environmental)
+sum(is.na(environmental$dischargeUnitID))/nrow(environmental)
+sum(is.na(environmental$dischargeSampleGearID))/nrow(environmental)
+sum(is.na(environmental$waterVel))/nrow(environmental)
+sum(is.na(environmental$waterVelUnitID))/nrow(environmental)
+sum(is.na(environmental$waterVelSampleGearID))/nrow(environmental)
+sum(is.na(environmental$turbidity))/nrow(environmental)
+sum(is.na(environmental$turbidityUnitID))/nrow(environmental)
+sum(is.na(environmental$turbiditySampleGearID))/nrow(environmental)
+
 unique(environmental$siteID)
 
 # mark_existing
 mark_existing <- read_csv(here::here("data", "mark_existing.csv")) |> glimpse()
+# TODO markCode column is 100% NAs
+# TODO variable description for markExisting ID
+# TODO measurement scale and domain for markCode
