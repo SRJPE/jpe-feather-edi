@@ -14,6 +14,7 @@ catch <- read_xlsx(here::here("data-raw", "feather_catch_edi.xlsx")) |> glimpse(
 # trap
 trap <- read_xlsx(here::here("data-raw", "feather_trap_edi.xlsx")) |>
   glimpse()
+# note: waterVel column is 99.7% NAs, discharge column is 75.8% NAs
 
 # recapture
 recapture <- read_xlsx(here::here("data-raw", "feather_recaptures_edi.xlsx")) |>
@@ -28,3 +29,4 @@ releases <- read_xlsx(here::here("data-raw", "feather_releases_edi.xlsx")) |>
 # the future
 release_fish <- read_xlsx(here::here("data-raw", "feather_releasefish_edi.xlsx")) |>
   glimpse()
+
