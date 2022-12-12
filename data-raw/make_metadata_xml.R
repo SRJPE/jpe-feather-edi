@@ -15,7 +15,6 @@ datatable_metadata <-
                 datatable_description = c("Daily catch",
                                           "Recaptured catch",
                                           "Release trial summary",
-                                          "Release trial summary",
                                           "Daily trap operations"),
                 datatable_url = paste0("https://raw.githubusercontent.com/FlowWest/jpe-feather-edi/main/data/",
                                        c("catch.csv",
@@ -32,6 +31,7 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 methods_docx <- "data-raw/metadata/method.docx"
 
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
+# TODO is this the right EDI?
 edi_number <- "edi.1239.1"
 
 dataset <- list() %>%
