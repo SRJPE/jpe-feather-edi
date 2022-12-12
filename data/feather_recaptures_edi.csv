@@ -1976,13 +1976,13 @@ ProjectDescriptionID,catchRawID,trapVisitID,commonName,releaseID,run,fishOrigin,
 2,76855330,8817,Chinook salmon,849,Fall,Natural,Not recorded,No,NA,NA,11,1,2020-05-10T11:14:43Z,Continue trapping,Eye Riffle,Eye riffle_north,Elastomer,Yellow,Nose,NA
 2,76855359,8818,Chinook salmon,852,Fall,Natural,Not recorded,No,NA,NA,1,1,2020-05-05T13:50:29Z,Continue trapping,Herringer Riffle,Herringer_Upper_west,Elastomer,White,Nose,NA
 2,76855454,8821,Chinook salmon,852,Fall,Natural,Not recorded,No,NA,NA,1,1,2020-05-08T11:46:31Z,Continue trapping,Herringer Riffle,Herringer_Upper_west,Elastomer,White,Nose,NA
-2,76855472,8822,Chinook salmon,853,Fall,Natural,Silvery parr,No,TRUE,NA,1,1,2020-05-09T08:46:43Z,Continue trapping,Herringer Riffle,Herringer_Upper_west,Elastomer,Red,Nose,NA
-2,76855521,8823,Chinook salmon,851,Fall,Natural,Not recorded,No,TRUE,NA,1,1,2020-05-10T08:50:04Z,Continue trapping,Herringer Riffle,Herringer_Upper_west,Elastomer,Green,Nose,NA
+2,76855472,8822,Chinook salmon,853,Fall,Natural,Silvery parr,No,75,NA,1,1,2020-05-09T08:46:43Z,Continue trapping,Herringer Riffle,Herringer_Upper_west,Elastomer,Red,Nose,NA
+2,76855521,8823,Chinook salmon,851,Fall,Natural,Not recorded,No,45,NA,1,1,2020-05-10T08:50:04Z,Continue trapping,Herringer Riffle,Herringer_Upper_west,Elastomer,Green,Nose,NA
 2,76855636,8825,Chinook salmon,852,Fall,Natural,Not recorded,No,NA,NA,2,1,2020-05-06T12:25:05Z,Continue trapping,Herringer Riffle,Herringer_east,Elastomer,White,Nose,NA
-2,76855773,8828,Chinook salmon,853,Fall,Natural,Not recorded,No,TRUE,NA,1,1,2020-05-09T09:18:12Z,Continue trapping,Herringer Riffle,Herringer_east,Elastomer,Red,Nose,NA
-2,76855858,8829,Chinook salmon,853,Fall,Natural,Not recorded,No,TRUE,NA,1,1,2020-05-10T09:14:08Z,Continue trapping,Herringer Riffle,Herringer_east,Elastomer,Red,Nose,NA
+2,76855773,8828,Chinook salmon,853,Fall,Natural,Not recorded,No,56,NA,1,1,2020-05-09T09:18:12Z,Continue trapping,Herringer Riffle,Herringer_east,Elastomer,Red,Nose,NA
+2,76855858,8829,Chinook salmon,853,Fall,Natural,Not recorded,No,63,NA,1,1,2020-05-10T09:14:08Z,Continue trapping,Herringer Riffle,Herringer_east,Elastomer,Red,Nose,NA
 2,76856193,8832,Chinook salmon,849,Fall,Natural,Not recorded,No,NA,NA,1,1,2020-05-13T13:19:02Z,Continue trapping,Eye Riffle,Eye riffle_north,Elastomer,Yellow,Nose,NA
-2,76856397,8838,Chinook salmon,854,Fall,Natural,Not recorded,Yes,TRUE,NA,1,1,2020-05-13T10:10:44Z,Continue trapping,Herringer Riffle,Herringer_Upper_west,Elastomer,Green,Nose,NA
+2,76856397,8838,Chinook salmon,854,Fall,Natural,Not recorded,Yes,74,NA,1,1,2020-05-13T10:10:44Z,Continue trapping,Herringer Riffle,Herringer_Upper_west,Elastomer,Green,Nose,NA
 2,76856632,8840,Chinook salmon,850,Fall,Natural,Not recorded,No,NA,NA,2,1,2020-05-15T12:10:36Z,Continue trapping,Eye Riffle,Eye riffle_north,Elastomer,Pink,Nose,NA
 2,76856633,8840,Chinook salmon,848,Fall,Natural,Not recorded,No,NA,NA,1,1,2020-05-15T12:10:36Z,Continue trapping,Eye Riffle,Eye riffle_north,Elastomer,Orange,Nose,NA
 2,76856761,8841,Chinook salmon,850,Fall,Natural,Not recorded,No,NA,NA,3,1,2020-05-16T11:06:31Z,Continue trapping,Eye Riffle,Eye riffle_north,Elastomer,Pink,Nose,NA
