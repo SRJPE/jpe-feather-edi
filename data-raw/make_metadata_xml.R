@@ -32,6 +32,7 @@ methods_docx <- "data-raw/metadata/method.docx"
 
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
 # TODO is this the right EDI?
+# TODO need to confirm ALL metadata in feather_metadata (is placeholder rn)
 edi_number <- "edi.1239.1"
 
 dataset <- list() %>%
@@ -48,14 +49,15 @@ dataset <- list() %>%
   add_datatable(datatable_metadata)
 
 # GO through and check on all units
-custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish"),
-                           unitType = c("dimensionless", "dimensionless", "dimensionless", "dimensionless"),
-                           parentSI = c(NA, NA, NA, NA),
-                           multiplierToSI = c(NA, NA, NA, NA),
+custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish", "days"),
+                           unitType = c("dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless"),
+                           parentSI = c(NA, NA, NA, NA, NA),
+                           multiplierToSI = c(NA, NA, NA, NA, NA),
                            description = c("number of rotations",
                                            "nephelometric turbidity units, common unit for measuring turbidity",
                                            "number of revolutions per minute",
-                                           "number of fish counted"))
+                                           "number of fish counted",
+                                           "number of days"))
 
 # unitList <- EML::set_unitList(custom_units)
 
