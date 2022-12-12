@@ -37,6 +37,7 @@ write_csv(recapture, here::here("data","feather_recaptures_edi.csv"))
 releases <- read_xlsx(here::here("data-raw", "feather_releases_edi.xlsx")) |>
   glimpse()
 write_csv(releases, here::here("data","feather_releases_edi.csv"))
+# TODO appliedMarkCode is 100% NAs
 
 # release fish
 # per butte edi example, don't need to upload this right now but keeping available for
