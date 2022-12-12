@@ -5,7 +5,7 @@ library(googleCloudStorageR)
 library(Hmisc)
 library(readxl)
 
-
+# TODO make feather metadata file; missing methods; missing abstract
 # inspect data files ------------------------------------------------------
 
 # catch

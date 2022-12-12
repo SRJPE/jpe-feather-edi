@@ -4,29 +4,26 @@ library(readxl)
 library(EML)
 
 datatable_metadata <-
-  dplyr::tibble(filepath = c("data/environmental.csv",
-                             "data/catch.csv",
-                             "data/mark_existing.csv",
-                             "data/release.csv",
-                             "data/trap.csv"),
-                attribute_info = c("data-raw/metadata/camp_environmental_metadata.xlsx",
-                                   "data-raw/metadata/camp_catch_metadata.xlsx",
-                                   "data-raw/metadata/camp_markexisting_metadata.xlsx",
-                                   "data-raw/metadata/camp_release_metadata.xlsx",
-                                   "data-raw/metadata/camp_trap_metadata.xlsx"),
-                datatable_description = c("Environmental covariates",
-                                          "Daily catch",
-                                          "Existing marks on catch",
+  dplyr::tibble(filepath = c("data/feather_catch_edi.csv",
+                             "data/feather_recaptures_edi.csv",
+                             "data/feather_releases_edi.csv",
+                             "data/feather_trap_edi.csv"),
+                attribute_info = c("data-raw/metadata/feather_catch_metadata.xlsx",
+                                   "data-raw/metadata/feather_recapture_metadata.xlsx",
+                                   "data-raw/metadata/feather_release_metadata.xlsx",
+                                   "data-raw/metadata/feather_trap_metadata.xlsx"),
+                datatable_description = c("Daily catch",
+                                          "Recaptured catch",
+                                          "Release trial summary",
                                           "Release trial summary",
                                           "Daily trap operations"),
                 datatable_url = paste0("https://raw.githubusercontent.com/FlowWest/jpe-feather-edi/main/data/",
-                                       c("environmental.csv",
-                                         "catch.csv",
-                                         "mark_existing.csv",
+                                       c("catch.csv",
+                                         "recapture.csv",
                                          "release.csv",
                                          "trap.csv")))
 # save cleaned data to `data/`
-excel_path <- "data-raw/metadata/camp_metadata.xlsx"
+excel_path <- "data-raw/metadata/feather_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
