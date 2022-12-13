@@ -9,6 +9,7 @@ library(readxl)
 # inspect data files ------------------------------------------------------
 
 # catch
+# TODO catch dates only go through 2007 (expected 2022)
 catch <- read_xlsx(here::here("data-raw", "feather_catch_edi.xlsx")) |> glimpse()
 write_csv(catch, here::here("data","feather_catch_edi.csv"))
 
@@ -31,6 +32,7 @@ recapture <- read_xlsx(here::here("data-raw", "feather_recaptures_edi.xlsx"),
 write_csv(recapture, here::here("data","feather_recaptures_edi.csv"))
 # TODO forkLength is 99% NAs
 # TODO totalLength and markCode are 100% NAs
+# TODO put in 0s or something in min/max and if that doesn't work, consider deleting column
 
 
 # release
