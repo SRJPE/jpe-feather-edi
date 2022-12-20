@@ -35,7 +35,13 @@ write_csv(recapture, here::here("data","feather_recaptures_edi.csv"))
 
 
 # release
-releases <- read_xlsx(here::here("data-raw", "feather_releases_edi.xlsx")) |>
+releases <- read_xlsx(here::here("data-raw", "feather_releases_edi.xlsx"),
+                      col_types = c("numeric", "numeric", "date",
+                                    "text", "text", "text",
+                                    "text", "text", "text",
+                                    "text", "numeric", "numeric",
+                                    "text", "text", "text",
+                                    "text", "text")) |>
   glimpse()
 write_csv(releases, here::here("data","feather_releases_edi.csv"))
 # appliedMarkCode is 100% NAs, put 0s in min/max in metadata
