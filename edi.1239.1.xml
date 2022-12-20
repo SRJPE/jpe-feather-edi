@@ -138,66 +138,91 @@
     <methods>
       <methodStep>
         <description>
-          <para>
-    Trap equipment
-  </para>
-          <para>
-    8-foot rotary screw traps  
-  </para>
-          <para>
-    Quantity = 3 
-  </para>
-          <para>
-    Current trap locations
-  </para>
-          <para>
-    1. Low Flow Channel (1 RST at Eye Riffle site near RM 60.2)  
-  </para>
-          <para>
-    2. High Flow Channel (2 RSTs in tandem at Herringer Riffle near RM
-    45.7) 
-  </para>
-          <para>
-    Historical trap locations
-  </para>
-          <para>
-    Low Flow Channel
-  </para>
-          <para>
-    High Flow Channel
-  </para>
-          <para>
-    Monitoring schedule
-  </para>
-          <para>
-    November-July
-  </para>
-          <para>
-    Continuously trapping except under high flows and unsafe working
-    conditions
-  </para>
-          <para>
-    Serviced daily within a 24-hour period, more if needed due to high
-    debris amounts or fish catch
-  </para>
-          <para>
-    Daily environmental data
-  </para>
-          <para>
-    Fish measurements
-  </para>
-          <para>
-    Fork length measurements to nearest mm taken for:  
-  </para>
-          <para>
-    Fish counts
-  </para>
-          <para>
-    Trap efficiency trials
-  </para>
-          <para>
-    Trap efficiency mark rotation
-  </para>
+          <section>
+            <title>Trap equipment</title>
+            <para>
+      Three 8-foot rotary screw traps were used.
+    </para>
+          </section>
+          <section>
+            <title>Current trap locations</title>
+            <para>
+      Theree are two curent trap locations: Low Flow Channel (1 RST at
+      Eye Riffle site near RM 60.2) and High Flow Channel (2 RSTs in
+      tandem at Herringer Riffle near RM 45.7).
+    </para>
+          </section>
+          <section>
+            <title>Historical trap locations</title>
+            <para>
+      Low Flow Channel historical trap locations are Steep Riffle site
+      near RM 61 and Gateway Riffle site near RM 59.5.
+    </para>
+            <para>
+      High Flow Channel historical trap locations are Live Oak site near
+      RM 42 and Sunset Pumps site near RM 38.
+    </para>
+          </section>
+          <section>
+            <title>Monitoring schedule</title>
+            <para>
+      From November to July. Continuously trapping except under high
+      flows and unsafe working conditions. Serviced daily within a
+      24-hour period, more if needed due to high debris amounts or fish
+      catch
+    </para>
+          </section>
+          <section>
+            <title>Daily environmental data</title>
+            <para>
+      Daily environmental data collected are water temperature (Celsius)
+      and turbidity (Nephelometric Turbidity Units).
+    </para>
+          </section>
+          <section>
+            <title>Fish measurements</title>
+            <para>
+      Fork length measurements to nearest mm taken for Chinook (50
+      randomly selected of each run type, run determined by Greene 1992
+      Length-at-Date chart), Steelhead (first 50), and non-salmonids (up
+      to 20).
+    </para>
+          </section>
+          <section>
+            <title>Fish counts</title>
+            <para>
+      All fish not measured are plus counted by hand. If juvenile salmon
+      are highly abundant, a simple volume displacement method is used
+      to count fall-run Chinook in increments of 500-1,000 or more to
+      speed up processing. Efforts are made to ensure welfare of fish is
+      maintained during capture and handling; however, fish may be
+      affected by other pathogens and disease which may increase the
+      possibility of mortality.
+    </para>
+          </section>
+          <section>
+            <title>Trap efficiency trials</title>
+            <para>
+      Natural origin fall-run captured in RSTs are the primary source of
+      released fish. At least once weekly December-April across variable
+      flow and environmental conditions as catch totals allow. A minimum
+      of 3 consecutive days of fishing after the release date is
+      required for a release to be included in analysis. Mortality
+      between the release point and the trap is assumed to be
+      negligible. Release site approximately 0.5 miles upstream of each
+      trap site.
+    </para>
+          </section>
+          <section>
+            <title>Trap efficiency mark rotation</title>
+            <para>
+      Fish are marked with a colored Visible Implant Elastomer (VIE),
+      and/or a Bismarck brown Y (BBY) whole body stain. Elastomer colors
+      and/or marking locations on the fish are used to create unique
+      marks. A unique mark is not used again for 7 days to ensure
+      release groups of the same mark do not overlap.
+    </para>
+          </section>
         </description>
       </methodStep>
     </methods>
@@ -524,7 +549,7 @@
       <attributeList>
         <attribute>
           <attributeName>ProjectDescriptionID</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Foreign key to the CAMP ProjectDescription table. All data associated with this package will have a ProjectDescriptionID = 2</attributeDefinition>
           <measurementScale>
             <ordinal>
@@ -541,7 +566,7 @@
         </attribute>
         <attribute>
           <attributeName>catchRawID</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Primary key in the CAMP CatchRaw table</attributeDefinition>
           <measurementScale>
             <ordinal>
@@ -555,7 +580,7 @@
         </attribute>
         <attribute>
           <attributeName>trapVisitID</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Foreign key to the CAMP TrapVisit table</attributeDefinition>
           <measurementScale>
             <ordinal>
@@ -569,7 +594,7 @@
         </attribute>
         <attribute>
           <attributeName>commonName</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Common name of species. Levels = "Chinook salmon"</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -583,7 +608,7 @@
         </attribute>
         <attribute>
           <attributeName>releaseID</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Foreign Key to the CAMP Release table</attributeDefinition>
           <measurementScale>
             <ordinal>
@@ -597,7 +622,7 @@
         </attribute>
         <attribute>
           <attributeName>run</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Run as assigned at the time of the capture. Levels = c("Not recorded", "Fall", "Spring")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -611,7 +636,7 @@
         </attribute>
         <attribute>
           <attributeName>fishOrigin</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Origin/production type of the fish. Levels = c("Hatchery", "Natural", "Unknown")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -625,7 +650,7 @@
         </attribute>
         <attribute>
           <attributeName>lifeStage</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Life stage of the fish. Levels = c("Not recorded", "Smolt", "Parr", "Fry", "Button-up fry", "Silvery parr", "Adult", "Juvenile", "Ammocoete", "Yearling", "Yolk sac fry (alevin)")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -639,7 +664,7 @@
         </attribute>
         <attribute>
           <attributeName>mort</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Whether fish died due to being captured or handled.  Levels = c("Yes", "No")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -653,7 +678,7 @@
         </attribute>
         <attribute>
           <attributeName>forkLength</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Fork length of the fish measured in millimeters</attributeDefinition>
           <measurementScale>
             <ratio>
@@ -672,7 +697,7 @@
         </attribute>
         <attribute>
           <attributeName>totalLength</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Total length of the fish measured in millimeters</attributeDefinition>
           <measurementScale>
             <ratio>
@@ -691,7 +716,7 @@
         </attribute>
         <attribute>
           <attributeName>n</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Number of fish actually handled/counted</attributeDefinition>
           <measurementScale>
             <ratio>
@@ -710,7 +735,7 @@
         </attribute>
         <attribute>
           <attributeName>actualCountID</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Whether the count (n) is an actual count or estimate. Levels = c("Yes", "No")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -724,7 +749,7 @@
         </attribute>
         <attribute>
           <attributeName>visitTime</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Date and time of day associated with the trap visit.</attributeDefinition>
           <measurementScale>
             <dateTime>
@@ -740,7 +765,7 @@
         </attribute>
         <attribute>
           <attributeName>visitType</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Work that was done during visit to trap. Levels = c("Continue trapping", "Start trap &amp; begin trapping", "End trapping", "Unplanned restart", "Not applicable (n/a)", "Service/adjust/clean trap")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -754,7 +779,7 @@
         </attribute>
         <attribute>
           <attributeName>siteName</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Name of the sampling site. Levels = c("Eye Riffle", "Herringer Riffle", "Steep Riffle", "Sunset Pumps", "Gateway Riffle", "Live Oak")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -768,7 +793,7 @@
         </attribute>
         <attribute>
           <attributeName>subSiteName</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>Name of the trap or trap location. Levels = c("Eye riffle_north", "Herringer_west", "Herringer_east", "#Steep Riffle_RST", "Sunset West bank", "Sunset East bank", "Gateway_main1", "Live Oak", "Eye riffle_Side Channel", "Herringer_Upper_west", "Steep Riffle_10' ext", "Gateway Main 400' Up River", "Gateway_Rootball")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -782,7 +807,7 @@
         </attribute>
         <attribute>
           <attributeName>markType</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>type of mark on fish. Levels = c("Elastomer", "Pigment / dye", "Fin clip")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -796,7 +821,7 @@
         </attribute>
         <attribute>
           <attributeName>markColor</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>color of mark on fish. Levels = c("White", "Brown", "Orange", "Green", "Red", "Blue", "yellow", "Purple / Violet", "Pink", "Not applicable (n/a)", "Fluorescent red", "Fluorescent blue")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -810,7 +835,7 @@
         </attribute>
         <attribute>
           <attributeName>markPosition</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>position of mark on body of fish. Levels = c("Nose", "Wholte body", "Adipose fin", "Not recorded")</attributeDefinition>
           <measurementScale>
             <nominal>
@@ -824,7 +849,7 @@
         </attribute>
         <attribute>
           <attributeName>markCode</attributeName>
-          <attributeLabel>catch</attributeLabel>
+          <attributeLabel>recapture</attributeLabel>
           <attributeDefinition>code identifying the type of mark</attributeDefinition>
           <measurementScale>
             <nominal>
