@@ -33,7 +33,6 @@ methods_docx <- "data-raw/metadata/methods.md"
 
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
 # TODO is this the right EDI?
-# TODO need to confirm ALL metadata in feather_metadata (is placeholder rn)
 edi_number <- "edi.1239.1"
 
 dataset <- list() %>%

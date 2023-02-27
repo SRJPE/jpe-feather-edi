@@ -5,7 +5,6 @@ library(googleCloudStorageR)
 library(Hmisc)
 library(readxl)
 
-# TODO make feather metadata file; missing methods; missing abstract
 # inspect data files ------------------------------------------------------
 
 # catch
@@ -16,7 +15,6 @@ write_csv(catch, here::here("data","feather_catch_edi.csv"))
 trap <- read_xlsx(here::here("data-raw", "feather_trap_edi.xlsx")) |>
   glimpse()
 write_csv(trap, here::here("data","feather_trap_edi.csv"))
-# waterVel column is 99.7% NAs, discharge column is 75.8% NAs
 
 # recapture
 recapture <- read_xlsx(here::here("data-raw", "feather_recaptures_edi.xlsx"),
@@ -29,9 +27,6 @@ recapture <- read_xlsx(here::here("data-raw", "feather_recaptures_edi.xlsx"),
                                      "text", "text", "text")) |>
   glimpse()
 write_csv(recapture, here::here("data","feather_recaptures_edi.csv"))
-# TODO forkLength is 99% NAs
-# TODO totalLength and markCode are 100% NAs
-# put 0s as min/max in metadata for NA columns
 
 
 # release
@@ -44,7 +39,6 @@ releases <- read_xlsx(here::here("data-raw", "feather_releases_edi.xlsx"),
                                     "text", "text")) |>
   glimpse()
 write_csv(releases, here::here("data","feather_releases_edi.csv"))
-# appliedMarkCode is 100% NAs, put 0s in min/max in metadata
 
 # release fish
 # per butte edi example, don't need to upload this right now but keeping available for
