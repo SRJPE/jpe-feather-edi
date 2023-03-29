@@ -1,6 +1,6 @@
 projectDescriptionID,releaseID,releaseTime,commonName,markedRun,markedLifeStage,markedFishOrigin,sourceOfFishSite,releaseSite,releaseSubSite,nReleased,testDays,appliedMarkType,appliedMarkColor,appliedMarkPosition,appliedMarkCode,IncludeInAnalysis
 2,1,1999-02-04T17:00:00Z,Chinook salmon,Fall,Not recorded,Natural,Not recorded,Eye riffle_release site,Eye Pool Left & Right RM 60.5,3181,2,Fin clip,Not applicable (n/a),Adipose fin,NA,No
-2,255,1900-01-02T00:00:00Z,Not applicable (n/a),Not recorded,Not recorded,Unknown,Not applicable,Not applicable,NA,0,0,NA,NA,NA,NA,No
+2,255,1900-01-01T00:00:00Z,Not applicable (n/a),Not recorded,Not recorded,Unknown,Not applicable,Not applicable,NA,0,0,NA,NA,NA,NA,No
 2,327,2011-12-05T11:30:00Z,Chinook salmon,Fall,Not recorded,Natural,Steep Riffle,Steep Riffle_release site,Not applicable (n/a),1093,7,Pigment / dye,Brown,Whole body,NA,Yes
 2,328,2011-12-13T11:45:00Z,Chinook salmon,Fall,Not recorded,Natural,Steep Riffle,Steep Riffle_release site,Not applicable (n/a),211,7,Elastomer,Red,Nose,NA,Yes
 2,329,2011-12-20T13:30:00Z,Chinook salmon,Fall,Not recorded,Natural,Steep Riffle,Steep Riffle_release site,Not applicable (n/a),318,7,Elastomer,Red,Nose,NA,Yes

@@ -17,27 +17,12 @@ trap <- read_xlsx(here::here("data-raw", "feather_trap_edi.xlsx")) |>
 write_csv(trap, here::here("data","feather_trap_edi.csv"))
 
 # recapture
-recapture <- read_xlsx(here::here("data-raw", "feather_recaptures_edi.xlsx"),
-                       col_types = c("numeric", "numeric", "numeric",
-                                     "text", "numeric", "text",
-                                     "text", "text", "text",
-                                     "numeric", "numeric", "numeric",
-                                     "numeric", "date", "text",
-                                     "text", "text", "text",
-                                     "text", "text", "text")) |>
-  glimpse()
+recapture <- read_xlsx(here::here("data-raw", "feather_recaptures_edi.xlsx")) |> glimpse()
 write_csv(recapture, here::here("data","feather_recaptures_edi.csv"))
 
 
 # release
-releases <- read_xlsx(here::here("data-raw", "feather_releases_edi.xlsx"),
-                      col_types = c("numeric", "numeric", "date",
-                                    "text", "text", "text",
-                                    "text", "text", "text",
-                                    "text", "numeric", "numeric",
-                                    "text", "text", "text",
-                                    "text", "text")) |>
-  glimpse()
+releases <- read_xlsx(here::here("data-raw", "feather_releases_edi.xlsx")) |> glimpse()
 write_csv(releases, here::here("data","feather_releases_edi.csv"))
 
 # release fish
