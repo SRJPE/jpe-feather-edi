@@ -47,3 +47,10 @@ release_fish <- read_xlsx(here::here("data-raw", "feather_releasefish_edi.xlsx")
   glimpse()
 write_csv(release_fish, here::here("data","feather_releasefish_edi.csv"))
 
+
+# look at clean data ------------------------------------------------------
+
+catch <- read_csv(here::here("data", "feather_catch_edi.csv")) |> glimpse()
+trap <- read_csv(here::here("data", "feather_trap_edi.csv")) |> glimpse()
+recaptures <- read_csv(here::here("data", "feather_recaptures_edi.csv")) |> glimpse()
+release <- read_csv(here::here("data", "feather_releases_edi.csv")) |> glimpse()
