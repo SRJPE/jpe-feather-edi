@@ -4,37 +4,35 @@ library(readxl)
 library(EML)
 
 datatable_metadata <-
-  dplyr::tibble(filepath = c("data/environmental.csv",
-                             "data/catch.csv",
-                             "data/mark_existing.csv",
-                             "data/release.csv",
-                             "data/trap.csv"),
-                attribute_info = c("data-raw/metadata/camp_environmental_metadata.xlsx",
-                                   "data-raw/metadata/camp_catch_metadata.xlsx",
-                                   "data-raw/metadata/camp_markexisting_metadata.xlsx",
-                                   "data-raw/metadata/camp_release_metadata.xlsx",
-                                   "data-raw/metadata/camp_trap_metadata.xlsx"),
-                datatable_description = c("Environmental covariates",
-                                          "Daily catch",
-                                          "Existing marks on catch",
+  dplyr::tibble(filepath = c("data/feather_catch_edi.csv",
+                             "data/feather_recaptures_edi.csv",
+                             "data/feather_releases_edi.csv",
+                             "data/feather_trap_edi.csv"),
+                attribute_info = c("data-raw/metadata/feather_catch_metadata.xlsx",
+                                   "data-raw/metadata/feather_recapture_metadata.xlsx",
+                                   "data-raw/metadata/feather_release_metadata.xlsx",
+                                   "data-raw/metadata/feather_trap_metadata.xlsx"),
+                datatable_description = c("Daily catch",
+                                          "Recaptured catch",
                                           "Release trial summary",
                                           "Daily trap operations"),
                 datatable_url = paste0("https://raw.githubusercontent.com/FlowWest/jpe-feather-edi/main/data/",
-                                       c("environmental.csv",
-                                         "catch.csv",
-                                         "mark_existing.csv",
+                                       c("catch.csv",
+                                         "recapture.csv",
                                          "release.csv",
                                          "trap.csv")))
 # save cleaned data to `data/`
-excel_path <- "data-raw/metadata/camp_metadata.xlsx"
+excel_path <- "data-raw/metadata/feather_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
 
 abstract_docx <- "data-raw/metadata/abstract.docx"
-methods_docx <- "data-raw/metadata/method.docx"
+# methods_docx <- "data-raw/metadata/method.docx"
+methods_docx <- "data-raw/metadata/methods.md"
 
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
+# TODO is this the right EDI?
 edi_number <- "edi.1239.1"
 
 dataset <- list() %>%
@@ -51,23 +49,23 @@ dataset <- list() %>%
   add_datatable(datatable_metadata)
 
 # GO through and check on all units
-# custom_units <- data.frame(id = c("number of fish", "rotations per minute", "rotations", "nephelometric turbidity units", "day"),
-#                            unitType = c("density", "dimensionless", "dimensionless", "dimensionless", "dimensionless"),
-#                            parentSI = c(NA, NA, NA, NA, NA),
-#                            multiplierToSI = c(NA, NA, NA, NA, NA),
-#                            description = c("Fish density in the enclosure, number of fish in total enclosure space",
-#                                            "Number of trap rotations in one minute",
-#                                            "Total rotations",
-#                                            "Nephelometric turbidity units, common unit for measuring turbidity",
-#                                            "The day sampling occured"))
+custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish", "days"),
+                           unitType = c("dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless"),
+                           parentSI = c(NA, NA, NA, NA, NA),
+                           multiplierToSI = c(NA, NA, NA, NA, NA),
+                           description = c("number of rotations",
+                                           "nephelometric turbidity units, common unit for measuring turbidity",
+                                           "number of revolutions per minute",
+                                           "number of fish counted",
+                                           "number of days"))
 
-# unitList <- EML::set_unitList(custom_units)
+unitList <- EML::set_unitList(custom_units)
 
 eml <- list(packageId = edi_number,
             system = "EDI",
             access = add_access(),
-            dataset = dataset
-            # additionalMetadata = list(metadata = list(unitList = unitList))
+            dataset = dataset,
+            additionalMetadata = list(metadata = list(unitList = unitList))
             )
 edi_number
 EML::write_eml(eml, "edi.1239.1.xml")

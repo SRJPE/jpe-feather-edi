@@ -3,80 +3,39 @@ library(knitr)
 library(lubridate)
 library(googleCloudStorageR)
 library(Hmisc)
+library(readxl)
 
-gcs_auth(json_file = Sys.getenv("GCS_AUTH_FILE"))
-gcs_global_bucket(bucket = Sys.getenv("GCS_DEFAULT_BUCKET"))
+# inspect data files ------------------------------------------------------
 
-gcs_get_object(object_name = "rst/CAMP/feather_river/CAMP.mdb",
-               bucket = gcs_get_global_bucket(),
-               saveToDisk = here::here("data-raw","CAMP.mdb"),
-               overwrite = TRUE)
-feather_camp <- (here::here("data-raw", "CAMP.mdb"))
+# catch
+catch <- read_xlsx(here::here("data-raw", "feather_catch_edi.xlsx")) |> glimpse()
+write_csv(catch, here::here("data","feather_catch_edi.csv"))
 
-catch_raw <- mdb.get(feather_camp, tables = "CatchRaw")
-trap_visit <- mdb.get(feather_camp, tables = "TrapVisit") %>%
-  mutate(visitTime = as.POSIXct(visitTime),
-         visitTime2 = as.POSIXct(visitTime2))
-site_lu <- mdb.get(feather_camp, "Site") %>%
-  select(siteName, siteID)
-subsite_lu <- mdb.get(feather_camp, "SubSite") %>%
-  select(subSiteName, subSiteID, siteID) %>%
-  filter(subSiteName != "N/A")
-release <- mdb.get(feather_camp, tables = "Release") %>%
-  mutate(releaseTime = as.POSIXct(releaseTime))
-mark_applied <- mdb.get(feather_camp, tables = "MarkApplied")
-mark <-  mdb.get(feather_camp, tables = "MarkExisting")
-environmental <- mdb.get(feather_camp, tables = "EnvDataRaw")
+# trap
+trap <- read_xlsx(here::here("data-raw", "feather_trap_edi.xlsx")) |>
+  glimpse()
+write_csv(trap, here::here("data","feather_trap_edi.csv"))
 
-# Format trap table for EDI
-trap_visit_format <- trap_visit %>%
-  select(projectDescriptionID, trapVisitID, trapPositionID, visitTime, visitTime2,
-         visitTypeID, fishProcessedID, inThalwegID, trapFunctioningID, counterAtStart,
-         counterAtEnd, rpmRevolutionsAtStart, rpmSecondsAtStart, rpmRevolutionsAtEnd,
-         rpmSecondsAtEnd, halfConeID, includeCatchID, debrisVolumeCatID, debrisVolume,
-         debrisVolumeUnits) %>%
-  left_join(subsite_lu, by = c("trapPositionID" = "subSiteID")) %>%
-  select(-subSiteName) %>%
-  relocate(siteID, .before = trapPositionID)
+# recapture
+recapture <- read_xlsx(here::here("data-raw", "feather_recaptures_edi.xlsx")) |> glimpse()
+write_csv(recapture, here::here("data","feather_recaptures_edi.csv"))
 
-write_csv(trap_visit_format, here::here("data", "trap.csv"))
 
-# Format catch table for EDI
-catch_format <- catch_raw %>%
-  select(projectDescriptionID, catchRawID, trapVisitID, taxonID, atCaptureRunID,
-         atCaptureRunMethodID, finalRunID, finalRunMethodID, fishOriginID,
-         lifeStageID, forkLength, totalLength, weight, n, randomID, actualCountID,
-         releaseID, mortID) %>%
-  left_join(trap_visit_format %>%
-              select(projectDescriptionID, trapVisitID, visitTime, visitTime2, visitTypeID, siteID, trapPositionID),
-            by = c("trapVisitID" = "trapVisitID", "projectDescriptionID" = "projectDescriptionID")) %>%
-  relocate(releaseID, .before = taxonID)
+# release
+releases <- read_xlsx(here::here("data-raw", "feather_releases_edi.xlsx")) |> glimpse()
+write_csv(releases, here::here("data","feather_releases_edi.csv"))
 
-write_csv(catch_format, here::here("data", "catch.csv"))
+# release fish
+# per butte edi example, don't need to upload this right now but keeping available for
+# the future
+release_fish <- read_xlsx(here::here("data-raw", "feather_releasefish_edi.xlsx")) |>
+  glimpse()
+write_csv(release_fish, here::here("data","feather_releasefish_edi.csv"))
 
-# Format release table for EDI
-release_format <- release %>%
-  select(projectDescriptionID, releaseID, releasePurposeID, markedTaxonID,
-         markedRunID, markedLifeStageID, markedFishOriginID, sourceOfFishSiteID,
-         releaseSiteID, releaseSubSiteID, nMortWhileHandling, nMortAtCheck,
-         nReleased, releaseTime, releaseLightConditionID,
-         testDays, includeTestID) %>%
-  left_join(mark_applied %>%
-              select(projectDescriptionID, releaseID, appliedMarkTypeID, appliedMarkColorID, appliedMarkPositionID, appliedMarkCode),
-            by = c("projectDescriptionID" = "projectDescriptionID", "releaseID" = "releaseID"))
-write_csv(release_format, here::here("data", "release.csv"))
 
-# Format for mark existing table for EDI
-mark_existing_format <- mark %>%
-  select(projectDescriptionID, catchRawID, markExistingID, markTypeID, markColorID, markPositionID, markCode)
-write_csv(mark_existing_format, here::here("data", "mark_existing.csv"))
+# look at clean data ------------------------------------------------------
 
-# Format for environmental table for EDI
-environmental_format <- environmental %>%
-  select(projectDescriptionID, envDataRawID, trapVisitID, discharge, dischargeUnitID, dischargeSampleGearID, waterVel, waterVelUnitID,
-         waterVelSampleGearID, waterTemp, waterTempUnitID, waterTempSampleGearID, lightPenetration, lightPenetrationUnitID, lightPenetrationSampleGearID,
-         turbidity, turbidityUnitID, turbiditySampleGearID) %>%
-  left_join(trap_visit_format %>%
-              select(projectDescriptionID, trapVisitID, visitTime, visitTime2, visitTypeID, siteID, trapPositionID),
-            by = c("trapVisitID" = "trapVisitID", "projectDescriptionID" = "projectDescriptionID"))
-write_csv(environmental_format, here::here("data", "environmental.csv"))
+catch <- read_csv(here::here("data", "feather_catch_edi.csv")) |> glimpse()
+trap <- read_csv(here::here("data", "feather_trap_edi.csv")) |> glimpse()
+recaptures <- read_csv(here::here("data", "feather_recaptures_edi.csv")) |> glimpse()
+release <- read_csv(here::here("data", "feather_releases_edi.csv")) |> glimpse()
