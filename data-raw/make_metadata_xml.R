@@ -16,11 +16,11 @@ datatable_metadata <-
                                           "Recaptured catch",
                                           "Release trial summary",
                                           "Daily trap operations"),
-                datatable_url = paste0("https://raw.githubusercontent.com/FlowWest/jpe-feather-edi/main/data/",
-                                       c("catch.csv",
-                                         "recapture.csv",
-                                         "release.csv",
-                                         "trap.csv")))
+                datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/main/data/",
+                                       c("feather_catch_edi.csv",
+                                         "feather_recaptures_edi.csv",
+                                         "feather_releases_edi.csv",
+                                         "feather_trap_edi.csv")))
 # save cleaned data to `data/`
 excel_path <- "data-raw/metadata/feather_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
@@ -32,7 +32,6 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 methods_docx <- "data-raw/metadata/methods.md"
 
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
-# TODO is this the right EDI?
 edi_number <- "edi.1239.1"
 
 dataset <- list() %>%
@@ -67,15 +66,23 @@ eml <- list(packageId = edi_number,
             dataset = dataset,
             additionalMetadata = list(metadata = list(unitList = unitList))
             )
-edi_number
+
 EML::write_eml(eml, "edi.1239.1.xml")
 EML::eml_validate("edi.1239.1.xml")
 
-# EMLaide::evaluate_edi_package(Sys.getenv("user_ID"), Sys.getenv("password"), "edi.1047.1.xml")
-# EMLaide::upload_edi_package(Sys.getenv("user_ID"), Sys.getenv("password"), "edi.1047.1.xml")
-doc <- read_xml("edi.1239.1.xml")
-edi_number<- data.frame(edi_number = doc %>% xml_attr("packageId"))
-update_number <- edi_number %>%
-  separate(edi_number, c("edi","package","version"), "\\.") %>%
-  mutate(version = as.numeric(version) + 1)
-edi_number <- paste0(update_number$edi, ".", update_number$package, ".", update_number$version)
+evaluate <- EMLaide::evaluate_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
+                                          password = Sys.getenv("EDI_PASSWORD"),
+                                          eml_file_path = "edi.1239.1.xml",
+                                          environment = "staging")
+
+EMLaide::upload_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
+                            password = Sys.getenv("EDI_PASSWORD"),
+                            eml_file_path = "edi.1239.1.xml",
+                            environment = "staging")
+
+# doc <- read_xml("edi.1239.1.xml")
+# edi_number<- data.frame(edi_number = doc %>% xml_attr("packageId"))
+# update_number <- edi_number %>%
+#   separate(edi_number, c("edi","package","version"), "\\.") %>%
+#   mutate(version = as.numeric(version) + 1)
+# edi_number <- paste0(update_number$edi, ".", update_number$package, ".", update_number$version)
