@@ -74,14 +74,14 @@ EMLaide::evaluate_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
                                           password = Sys.getenv("EDI_PASSWORD"),
                                           eml_file_path = "edi.1239.2.xml")
 
-EMLaide::upload_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
-                            password = Sys.getenv("EDI_PASSWORD"),
-                            eml_file_path = "edi.1239.2.xml",
-                            environment = "staging")
-EMLaide::update_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
-                            password = Sys.getenv("EDI_PASSWORD"),
-                            eml_file_path = "edi.1239.2.xml",
-                            existing_package_identifier = "edi.1239.1")
+# EMLaide::upload_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
+#                             password = Sys.getenv("EDI_PASSWORD"),
+#                             eml_file_path = "edi.1239.2.xml",
+#                             environment = "staging")
+# EMLaide::update_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
+#                             password = Sys.getenv("EDI_PASSWORD"),
+#                             eml_file_path = "edi.1239.2.xml",
+#                             existing_package_identifier = "edi.1239.1")
 # doc <- read_xml("edi.1239.1.xml")
 # edi_number<- data.frame(edi_number = doc %>% xml_attr("packageId"))
 # update_number <- edi_number %>%
