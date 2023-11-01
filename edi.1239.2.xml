@@ -253,8 +253,8 @@
       <entityDescription>Daily catch</entityDescription>
       <physical>
         <objectName>feather_catch.csv</objectName>
-        <size unit="bytes">14</size>
-        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <size unit="bytes">45304343</size>
+        <authentication method="MD5">1347296c894273dd19fadae41c98f26a</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -524,8 +524,8 @@
       <entityDescription>Recaptured catch</entityDescription>
       <physical>
         <objectName>feather_recapture.csv</objectName>
-        <size unit="bytes">14</size>
-        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <size unit="bytes">339602</size>
+        <authentication method="MD5">4d0c38d343c2aaaec587332a1fc70e23</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -818,8 +818,8 @@
       <entityDescription>Release trial summary</entityDescription>
       <physical>
         <objectName>feather_release.csv</objectName>
-        <size unit="bytes">14</size>
-        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <size unit="bytes">64094</size>
+        <authentication method="MD5">bf4f6ab63c0aa7da4ab5b433b47b741a</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -1098,8 +1098,8 @@
       <entityDescription>Daily trap operations</entityDescription>
       <physical>
         <objectName>feather_trap.csv</objectName>
-        <size unit="bytes">14</size>
-        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <size unit="bytes">1593153</size>
+        <authentication method="MD5">231dfd9b74807baf219d4f453d787e28</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
