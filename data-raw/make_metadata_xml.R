@@ -4,10 +4,10 @@ library(readxl)
 library(EML)
 
 datatable_metadata <-
-  dplyr::tibble(filepath = c("data/feather_catch_edi.csv",
-                             "data/feather_recaptures_edi.csv",
-                             "data/feather_releases_edi.csv",
-                             "data/feather_trap_edi.csv"),
+  dplyr::tibble(filepath = c("data/feather_catch.csv",
+                             "data/feather_recapture.csv",
+                             "data/feather_release.csv",
+                             "data/feather_trap.csv"),
                 attribute_info = c("data-raw/metadata/feather_catch_metadata.xlsx",
                                    "data-raw/metadata/feather_recapture_metadata.xlsx",
                                    "data-raw/metadata/feather_release_metadata.xlsx",
@@ -17,10 +17,10 @@ datatable_metadata <-
                                           "Release trial summary",
                                           "Daily trap operations"),
                 datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/main/data/",
-                                       c("feather_catch_edi.csv",
-                                         "feather_recaptures_edi.csv",
-                                         "feather_releases_edi.csv",
-                                         "feather_trap_edi.csv")))
+                                       c("feather_catch.csv",
+                                         "feather_recapture.csv",
+                                         "feather_release.csv",
+                                         "feather_trap.csv")))
 # save cleaned data to `data/`
 excel_path <- "data-raw/metadata/feather_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
