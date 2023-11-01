@@ -32,7 +32,7 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 methods_docx <- "data-raw/metadata/methods.md"
 
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
-edi_number <- "edi.1239.1"
+edi_number <- "edi.1239.2"
 
 dataset <- list() %>%
   add_pub_date() %>%
@@ -67,17 +67,17 @@ eml <- list(packageId = edi_number,
             additionalMetadata = list(metadata = list(unitList = unitList))
             )
 
-EML::write_eml(eml, "edi.1239.1.xml")
-EML::eml_validate("edi.1239.1.xml")
+EML::write_eml(eml, "edi.1239.2.xml")
+EML::eml_validate("edi.1239.2.xml")
 
 evaluate <- EMLaide::evaluate_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
                                           password = Sys.getenv("EDI_PASSWORD"),
-                                          eml_file_path = "edi.1239.1.xml",
+                                          eml_file_path = "edi.1239.2.xml",
                                           environment = "staging")
 
 EMLaide::upload_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
                             password = Sys.getenv("EDI_PASSWORD"),
-                            eml_file_path = "edi.1239.1.xml",
+                            eml_file_path = "edi.1239.2.xml",
                             environment = "staging")
 
 # doc <- read_xml("edi.1239.1.xml")
