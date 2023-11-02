@@ -47,12 +47,12 @@ jobs:
           git add .
           git commit -m "updates xml"
           git push
-      - name: merge branch to test
+      - name: merge branch to main
         run: |
           git branch
-          git checkout test
+          git checkout main
           git pull
-          git merge ${{ github.ref_name }} -m"merging validated upload branch to test"
+          git merge ${{ github.ref_name }} -m"merging validated upload branch to main"
           git push
       # - name: delete old branch
       #   run: |
