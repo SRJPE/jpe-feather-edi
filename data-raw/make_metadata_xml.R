@@ -80,7 +80,7 @@ custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per
 
 unitList <- EML::set_unitList(custom_units)
 
-eml <- list(packageId = edi_number,
+eml <- list(packageId = current_edi_number,
             system = "EDI",
             access = add_access(),
             dataset = dataset,
@@ -93,7 +93,7 @@ message("EML Metadata generated")
 
 # EMLaide::evaluate_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
 #                                           password = Sys.getenv("EDI_PASSWORD"),
-#                                           eml_file_path = "edi.1239.2.xml")
+#                                           eml_file_path = "edi.1239.3.xml")
 
 # EMLaide::upload_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
 #                             password = Sys.getenv("EDI_PASSWORD"),
