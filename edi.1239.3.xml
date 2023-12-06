@@ -819,8 +819,8 @@
       <entityDescription>Release trial summary</entityDescription>
       <physical>
         <objectName>feather_release.csv</objectName>
-        <size unit="bytes">64509</size>
-        <authentication method="MD5">298000e30e2c9e7b67784357163cb085</authentication>
+        <size unit="bytes">62514</size>
+        <authentication method="MD5">f8bd2bdf972f7d12578cfdad864e73bd</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
