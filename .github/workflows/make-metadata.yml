@@ -14,7 +14,7 @@ jobs:
       EDI_USERNAME: ${{ secrets.EDI_USERNAME }}
       EDI_PASSWORD: ${{ secrets.EDI_PASSWORD }}
     steps: 
-      - name: update package lists
+      - name: Update package lists
         run: sudo apt-get --allow-releaseinfo-change update
       - uses: actions/checkout@v3
         with:
@@ -26,12 +26,12 @@ jobs:
       - name: Print branch name
         run: |
           echo "Current branch: ${{github.ref_name }}"
-      - name: pull data
+      - name: Pull data
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git pull origin ${{github.ref_name }}
-      - name: merge branch to main
+      - name: Merge branch to main
         run: |
           git checkout main
           git pull
@@ -43,14 +43,14 @@ jobs:
       - name: Check workspace
         run: |
           echo ${{ github.workspace }} 
-      - name: run create xml
+      - name: Run create xml
         env:
           EDI_USERNAME: ${{ secrets.EDI_USERNAME }}
           EDI_PASSWORD: ${{ secrets.EDI_PASSWORD }}
         run: |
           source('data-raw/make_metadata_xml.R')
         shell: Rscript {0}
-      - name: push to main
+      - name: Push to main
         run: |
           git add .
           git commit -m "push updated xml"
@@ -58,7 +58,7 @@ jobs:
       - name: Finish action
         run: |
           echo "Xml generated and pushed"      
-      - name: delete old branch
+      - name: Delete old branch
         run: |
           git branch -D ${{ github.ref_name }}
           git push origin --delete ${{ github.ref_name }}
