@@ -37,7 +37,7 @@ methods_docx <- "data-raw/metadata/methods.md"
 catch_df <- readr::read_csv("data/feather_catch.csv")
 catch_coverage <- tail(catch_df$visitTime, 1)
 metadata$coverage$end_date <- lubridate::floor_date(catch_coverage, unit = "days")
-write.xlsx(metadata$coverage, sheetName="coverage", row.names = FALSE)
+openxlsx::write.xlsx(metadata$coverage, excel_path, sheetName="coverage", rowNames = FALSE)
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
 # edi_number <- "edi.1239.2"
 
