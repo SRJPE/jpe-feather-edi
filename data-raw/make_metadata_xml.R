@@ -29,11 +29,15 @@ excel_path <- "data-raw/metadata/feather_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
-
 abstract_docx <- "data-raw/metadata/abstract.docx"
 # methods_docx <- "data-raw/metadata/method.docx"
 methods_docx <- "data-raw/metadata/methods.md"
 
+# coverage <- readxl::read_excel(excel_path, sheet = "coverage")
+catch_df <- readr::read_csv("data/feather_catch.csv")
+catch_coverage <- tail(catch_df$visitTime, 1)
+metadata$coverage$end_date <- lubridate::floor_date(catch_coverage, unit = "days")
+write.xlsx(metadata$coverage, sheetName="coverage", row.names = FALSE)
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
 # edi_number <- "edi.1239.2"
 
