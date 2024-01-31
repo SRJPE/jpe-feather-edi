@@ -29,6 +29,7 @@ excel_path <- "data-raw/metadata/feather_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
+
 abstract_docx <- "data-raw/metadata/abstract.docx"
 # methods_docx <- "data-raw/metadata/method.docx"
 methods_docx <- "data-raw/metadata/methods.md"
@@ -44,6 +45,7 @@ for (sheet_name in names(metadata)) {
   openxlsx::writeData(wb, sheet = sheet_name, x = metadata[[sheet_name]], rowNames = FALSE)
 }
 openxlsx::saveWorkbook(wb, file = excel_path, overwrite=TRUE)
+
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
 # edi_number <- "edi.1239.2"
 
