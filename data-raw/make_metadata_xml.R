@@ -34,6 +34,18 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 # methods_docx <- "data-raw/metadata/method.docx"
 methods_docx <- "data-raw/metadata/methods.md"
 
+#update metadata
+catch_df <- readr::read_csv("data/feather_catch.csv")
+catch_coverage <- tail(catch_df$visitTime, 1)
+metadata$coverage$end_date <- lubridate::floor_date(catch_coverage, unit = "days")
+
+wb <- openxlsx::createWorkbook()
+for (sheet_name in names(metadata)) {
+  openxlsx::addWorksheet(wb, sheetName = sheet_name)
+  openxlsx::writeData(wb, sheet = sheet_name, x = metadata[[sheet_name]], rowNames = FALSE)
+}
+openxlsx::saveWorkbook(wb, file = excel_path, overwrite=TRUE)
+
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
 # edi_number <- "edi.1239.2"
 

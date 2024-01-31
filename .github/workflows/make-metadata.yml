@@ -13,7 +13,7 @@ jobs:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       EDI_USERNAME: ${{ secrets.EDI_USERNAME }}
       EDI_PASSWORD: ${{ secrets.EDI_PASSWORD }}
-    steps: 
+    steps:
       - name: Update package lists
         run: sudo apt-get --allow-releaseinfo-change update
       - uses: actions/checkout@v3
@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
       - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - uses: r-lib/actions/setup-pandoc@v2
-        with: 
+        with:
           pandoc-version: '2.17.1'
       - name: Print branch name
         run: |
@@ -42,7 +42,7 @@ jobs:
         working-directory: ${{ github.workspace }}
       - name: Check workspace
         run: |
-          echo ${{ github.workspace }} 
+          echo ${{ github.workspace }}
       - name: Run create xml
         env:
           EDI_USERNAME: ${{ secrets.EDI_USERNAME }}
@@ -57,7 +57,7 @@ jobs:
           git push
       - name: Finish action
         run: |
-          echo "Xml generated and pushed"      
+          echo "Xml generated and pushed"
       - name: Delete old branch
         run: |
           git branch -D ${{ github.ref_name }}
@@ -65,7 +65,7 @@ jobs:
       # - name: run shell script to delete previous xml version
       #   run: |
       #     chmod +x delete-file.sh
-      #     ./delete-file.sh 
+      #     ./delete-file.sh
       #     git commit -m "Remove previous xml version" -a
       #     git push
-      
+
