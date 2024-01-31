@@ -33,7 +33,7 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 # methods_docx <- "data-raw/metadata/method.docx"
 methods_docx <- "data-raw/metadata/methods.md"
 
-# coverage <- readxl::read_excel(excel_path, sheet = "coverage")
+#update metadat
 catch_df <- readr::read_csv("data/feather_catch.csv")
 catch_coverage <- tail(catch_df$visitTime, 1)
 metadata$coverage$end_date <- lubridate::floor_date(catch_coverage, unit = "days")
