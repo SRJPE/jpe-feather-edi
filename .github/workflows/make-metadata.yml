@@ -1,9 +1,9 @@
 name: 'make metadata test'
 on:
-  push
-  # create:
-  #   branches:
-  #     - '*'
+  # push
+  create:
+    branches:
+      - '*'
 jobs:
   make-metadata:
     runs-on: ubuntu-latest
@@ -32,11 +32,11 @@ jobs:
           git config user.email github-actions@github.com
           git pull origin ${{github.ref_name }}
       # - name: Merge branch to main
-      #   run: |
-      #     git checkout main
-      #     git pull
-      #     git merge ${{ github.ref_name }} -m"merging validated upload branch to main"
-      #     git push
+        run: |
+          git checkout main
+          git pull
+          git merge ${{ github.ref_name }} -m"merging validated upload branch to main"
+          git push
       - name: Show folder structure
         run: ls -R
         working-directory: ${{ github.workspace }}
@@ -58,10 +58,10 @@ jobs:
       - name: Finish action
         run: |
           echo "Xml generated and pushed"
-      # - name: Delete old branch
-      #   run: |
-      #     git branch -D ${{ github.ref_name }}
-      #     git push origin --delete ${{ github.ref_name }}
+      - name: Delete old branch
+        run: |
+          git branch -D ${{ github.ref_name }}
+          git push origin --delete ${{ github.ref_name }}
       # - name: run shell script to delete previous xml version
       #   run: |
       #     chmod +x delete-file.sh
