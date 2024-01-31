@@ -9,6 +9,7 @@ RUN Rscript -e 'install.packages("EML")'
 RUN Rscript -e 'remotes::install_github("FlowWest/EMLaide")'
 RUN Rscript -e 'install.packages("purrr")'
 RUN Rscript -e 'install.packages("openxlsx")'
+RUN Rscript -e 'install.packages("lubridate")'
 RUN apt -y install curl sudo
 RUN apt -y install git
 
