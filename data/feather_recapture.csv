@@ -1,13 +1,6 @@
 ProjectDescriptionID,catchRawID,trapVisitID,commonName,releaseID,run,fishOrigin,lifeStage,forkLength,n,visitTime,visitType,siteName,subSiteName,markType,markColor,markPosition,markCode
-2,74191,3534,Prickly sculpin,204,,Natural,Not recorded,,1,2007-12-11T11:30:00Z,Continue trapping,Steep Riffle,#Steep Riffle_RST,No marks or tags,Not applicable (n/a),Not applicable (n/a),
-2,93289,4201,Tule perch,273,,Natural,Not recorded,85.0,2,2009-03-08T11:00:00Z,Unplanned restart,Sunset Pumps,Sunset West bank,No marks or tags,Not applicable (n/a),Not applicable (n/a),
-2,94296,4219,Tule perch,275,,Natural,Not recorded,65.0,1,2009-03-14T12:00:00Z,Continue trapping,Sunset Pumps,Sunset East bank,No marks or tags,Not applicable (n/a),Not applicable (n/a),
-2,94396,4221,Tule perch,275,,Natural,Not recorded,85.0,1,2009-03-15T10:15:00Z,Continue trapping,Sunset Pumps,Sunset West bank,No marks or tags,Not applicable (n/a),Not applicable (n/a),
-2,94948,4233,Tule perch,579,,Natural,Not recorded,112.0,1,2009-03-19T09:30:00Z,Continue trapping,Steep Riffle,#Steep Riffle_RST,No marks or tags,Not applicable (n/a),Not applicable (n/a),
 2,135802,2739,Chinook salmon,564,,Natural,Not recorded,,1,2005-02-28T11:00:00Z,Continue trapping,Eye Riffle,Eye riffle_north,Elastomer,White,Nose,
 2,135850,2880,Chinook salmon,159,,Natural,Not recorded,,1,2005-04-25T13:30:00Z,Continue trapping,Herringer Riffle,Herringer_west,Pigment / dye,Brown,Whole body,
-2,136349,3538,Steelhead / rainbow trout,205,,Natural,Not recorded,,0,2007-12-13T12:00:00Z,Continue trapping,Steep Riffle,#Steep Riffle_RST,No marks or tags,Not applicable (n/a),Not applicable (n/a),
-2,136362,3551,Steelhead / rainbow trout,208,,Natural,Not recorded,,0,2007-12-21T15:00:00Z,Continue trapping,Steep Riffle,#Steep Riffle_RST,No marks or tags,Not applicable (n/a),Not applicable (n/a),
 2,136442,3637,Chinook salmon,239,,Natural,Not recorded,,12,2008-02-01T11:30:00Z,Continue trapping,Herringer Riffle,Herringer_east,Pigment / dye,Brown,Whole body,
 2,136455,3650,Chinook salmon,240,,Natural,Not recorded,,32,2008-02-05T15:30:00Z,Continue trapping,Herringer Riffle,Herringer_east,Pigment / dye,Brown,Whole body,
 2,136457,3652,Chinook salmon,240,,Natural,Not recorded,,5,2008-02-06T10:15:00Z,Continue trapping,Herringer Riffle,Herringer_west,Pigment / dye,Brown,Whole body,

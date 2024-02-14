@@ -96,17 +96,6 @@ projectDescriptionID,releaseID,releaseTime,commonName,markedRun,markedFishOrigin
 2,531,2014-02-20T21:00:00Z,Chinook salmon,Fall,Natural,Gateway Riffle,Herringer_release site,Herringer Release boxes,473,3,Elastomer,Red,Nose,,Yes
 2,532,2014-02-25T13:15:00Z,Chinook salmon,Fall,Natural,Gateway Riffle,Herringer_release site,next to Herringer Release boxes,465,3,Elastomer,Red,Nose,,Yes
 2,533,2014-02-26T12:00:00Z,Chinook salmon,Fall,Natural,Gateway Riffle,Herringer_release site,next to Herringer Release boxes,476,3,Elastomer,White,Nose,,Yes
-2,901,2023-02-09T11:00:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Herringer_release site,Herringer release_ RL & RR,728,7,Elastomer,White,Nose,,Yes
-2,902,2023-03-30T14:30:00Z,Chinook salmon,Fall,Hatchery,Not recorded,Eye riffle_release site,Below Weir Riffle,2305,7,Elastomer,Orange,Nose,,Yes
-2,903,2023-02-24T10:43:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Herringer_release site,Herringer release_ RL & RR,943,7,Elastomer,Green,Nose,,Yes
-2,904,2023-04-05T11:50:00Z,Chinook salmon,Fall,Hatchery,Not recorded,Herringer_release site,Herringer release_ RL & RR,4014,7,Elastomer,Green,Nose,,Yes
-2,905,2024-01-10T12:30:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Eye riffle_release site,Below Weir Riffle,567,7,Elastomer,Pink,Nose,,Yes
-2,906,2024-01-17T12:51:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Eye riffle_release site,Below Weir Riffle,361,7,Elastomer,Orange,Nose,,Yes
-2,907,2024-01-05T09:38:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,Herringer release_ RL & RR,191,7,Elastomer,White,Nose,,Yes
-2,908,2024-01-12T11:05:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,Herringer release_ RL & RR,571,7,Elastomer,Green,Nose,,Yes
-2,909,2024-01-17T10:05:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,Herringer release_ RL & RR,523,7,Elastomer,White,Nose,,Yes
-2,910,2024-01-19T10:17:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,444,7,Elastomer,Pink,Nose,,Yes
-2,911,2024-01-19T13:26:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,Herringer release_ RL & RR,1077,7,Elastomer,Blue,Nose,,Yes
 2,534,2014-03-06T13:10:00Z,Chinook salmon,Fall,Natural,Gateway Riffle,Herringer_release site,next to Herringer Release boxes,510,2,Elastomer,Blue,Nose,,Yes
 2,535,2014-03-07T10:20:00Z,Chinook salmon,Fall,Natural,Gateway Riffle,Herringer_release site,Herringer Release boxes,226,5,Elastomer,Red,Nose,,Yes
 2,536,2014-03-07T10:20:00Z,Chinook salmon,Fall,Natural,Gateway Riffle,Herringer_release site,next to Herringer Release boxes,201,2,Elastomer,White,Nose,,Yes
@@ -436,3 +425,19 @@ projectDescriptionID,releaseID,releaseTime,commonName,markedRun,markedFishOrigin
 2,898,2023-01-18T12:53:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Herringer_release site,Herringer release_ RL & RR,727,7,Elastomer,Green,Nose,,Yes
 2,899,2023-01-25T10:04:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Herringer_release site,Herringer release_ RL & RR,1417,7,Elastomer,White,Nose,,Yes
 2,900,2023-02-02T10:16:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,Herringer release_ RL & RR,1486,7,Elastomer,Green,Nose,,Yes
+2,901,2023-02-09T11:00:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Herringer_release site,Herringer release_ RL & RR,728,7,Elastomer,White,Nose,,Yes
+2,902,2023-03-30T14:30:00Z,Chinook salmon,Fall,Hatchery,Not recorded,Eye riffle_release site,Below Weir Riffle,2305,7,Elastomer,Orange,Nose,,Yes
+2,903,2023-02-24T10:43:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Herringer_release site,Herringer release_ RL & RR,943,7,Elastomer,Green,Nose,,Yes
+2,904,2023-04-05T11:50:00Z,Chinook salmon,Fall,Hatchery,Not recorded,Herringer_release site,Herringer release_ RL & RR,4014,7,Elastomer,Green,Nose,,Yes
+2,905,2024-01-10T12:30:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Eye riffle_release site,Below Weir Riffle,567,7,Elastomer,Pink,Nose,,Yes
+2,906,2024-01-17T12:51:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Eye riffle_release site,Below Weir Riffle,361,7,Elastomer,Orange,Nose,,Yes
+2,907,2024-01-05T09:38:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,Herringer release_ RL & RR,191,7,Elastomer,White,Nose,,Yes
+2,908,2024-01-12T11:05:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,half mile above trap RM,571,7,Elastomer,Green,Nose,,Yes
+2,909,2024-01-17T10:05:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,Herringer release_ RL & RR,523,7,Elastomer,White,Nose,,Yes
+2,910,2024-01-19T10:17:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,444,7,Elastomer,Pink,Nose,,Yes
+2,911,2024-01-19T13:26:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,half mile above trap RM,1077,7,Elastomer,Blue,Nose,,Yes
+2,912,2024-01-24T11:00:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,530,7,Elastomer,Yellow,Nose,,Yes
+2,913,2024-01-26T13:40:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,497,7,Elastomer,White,Nose,,Yes
+2,914,2024-01-31T10:05:00Z,Not applicable (n/a),Fall,Natural,Herringer Riffle,Eye riffle_release site,Below Weir Riffle,600,7,Elastomer,Yellow,Nose,,Yes
+2,915,2024-01-24T09:00:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,Herringer release_ RL & RR,350,7,Elastomer,Green,Nose,,Yes
+2,916,2024-01-26T10:32:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,Herringer release_ RL & RR,343,7,Elastomer,Pink,Nose,,Yes
