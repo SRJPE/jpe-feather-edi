@@ -5,35 +5,75 @@ library(EML)
 
 secret_edi_username = Sys.getenv("EDI_USERNAME")
 secret_edi_password = Sys.getenv("EDI_PASSWORD")
-unz("data/feather_catch.zip", "feather_catch.csv")
+# feather_recent <- read_csv("data/feather_catch.csv")
+# feather_recent <- feather_recent |>
+  # filter(visitTime > "2022-01-01") |> glimpse()
+# write_csv(feather_recent, "feather_catch.csv")
+# unz("data/feather_catch.zip", "feather_catch.csv")
+#filter to the most recent monitoring year
+#sept - sept (max date and pull data through september)
+#if month is 1-3 have to pull the year before
+#csv will be the filtered data
+#zipped will be the full package
 datatable_metadata <-
-    dplyr::tibble(filepath=c("data/feather_release.csv"),
-                  attribute_info = c("data-raw/metadata/feather_release_metadata.xlsx"),
-                  datatable_description = c("Release trial summary"),
+  dplyr::tibble(filepath=c("data/feather_catch.csv"),
+                attribute_info = c("data-raw/metadata/feather_catch_metadata.xlsx"),
+                datatable_description = c("Daily catch"),
+                datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
+                                       "feather_catch.csv"))
+zipped_entity_metadata <- list("file_name" = "feather_catch.zip",
+                               "file_type" = "zip",
+                               "physical" = create_physical(file_path = "data/feather_catch.zip",
+                                                            data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
+                                                                              "feather_catch.zip"))
+)
+datatable_metadata <-
+    dplyr::tibble(filepath=c("data/feather_catch.csv",
+                             "data/feather_recapture.csv",
+                             "data/feather_release.csv",
+                             "data/feather_trap.csv"),
+                  attribute_info = c("data-raw/metadata/feather_catch_metadata.xlsx",
+                                     "data-raw/metadata/feather_recapture_metadata.xlsx",
+                                     "data-raw/metadata/feather_release_metadata.xlsx",
+                                     "data-raw/metadata/feather_trap_metadata.xlsx"),
+                  datatable_description = c("Daily catch",
+                                            "Recaptured catch",
+                                            "Release trial summary",
+                                            "Daily trap operations"),
                   datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
-                                         "feather_release.csv"))
+                                         c("feather_catch.csv",
+                                           "feather_recapture.csv",
+                                           "feather_release.csv",
+                                           "feather_trap.csv")))
 #   dplyr::tibble(filepath = c("data/feather_catch.zip/feather_catch.csv",
 #                              "data/feather_recapture.zip/feather_recapture.csv",
 #                              "data/feather_release.zip/feather_release.csv",
 #                              "data/feather_trap.zip/feather_trap.csv"),
-#                 attribute_info = c("data-raw/metadata/feather_catch_metadata.xlsx",
-#                                    "data-raw/metadata/feather_recapture_metadata.xlsx",
-#                                    "data-raw/metadata/feather_release_metadata.xlsx",
-#                                    "data-raw/metadata/feather_trap_metadata.xlsx"),
-#                 datatable_description = c("Daily catch",
-#                                           "Recaptured catch",
-#                                           "Release trial summary",
-#                                           "Daily trap operations"),
+#
 #                 datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
-#                                        c("feather_catch.zip",
-#                                          "feather_recapture.zip",
-#                                          "feather_release.zip",
-#                                          "feather_trap.zip")))
-zipped_entity_metadata <- list("file_name" = "feather_release.zip",
-                               "file_type" = "zip",
-                               "physical" = create_physical(file_path = "data/feather_release.zip",
+#
+zipped_entity_metadata <- list("file_name" = c("feather_catch.zip",
+                                               "feather_recapture.zip",
+                                               "feather_release.zip",
+                                               "feather_trap.zip"),
+                               "file_description" = c("Daily catch",
+                                                         "Recaptured catch",
+                                                         "Release trial summary",
+                                                         "Daily trap operations"),
+                               "file_type" = c("zip","zip","zip","zip"),
+                               "physical" = list(create_physical(file_path = "data/feather_catch.zip",
                                                             data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
-                                                                              "feather_release.zip"))
+                                                                              "feather_catch.zip")),
+                                              create_physical(file_path = "data/feather_recapture.zip",
+                                                               data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
+                                                                                 "feather_recapture.zip")),
+                                               create_physical(file_path = "data/feather_release.zip",
+                                                               data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
+                                                                                 "feather_release.zip")),
+                                               create_physical(file_path = "data/feather_trap.zip",
+                                                               data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
+                                                                                 "feather_trap.zip"))
+                                              )
 )
 # # save cleaned data to `data/`
 excel_path <- "data-raw/metadata/feather_metadata.xlsx"
@@ -106,7 +146,7 @@ custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per
                                            "number of days"))
 
 unitList <- EML::set_unitList(custom_units)
-
+current_edi_number <- "edi.1133.5"
 eml <- list(packageId = current_edi_number,
             system = "EDI",
             access = add_access(),
@@ -116,16 +156,16 @@ eml <- list(packageId = current_edi_number,
 
 EML::write_eml(eml, paste0(current_edi_number, ".xml"))
 message("EML Metadata generated")
-#EML::eml_validate("edi.1239.2.xml")
+# EML::eml_validate("edi.1133.2.xml")
 
 # EMLaide::evaluate_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
 #                                           password = Sys.getenv("EDI_PASSWORD"),
 #                                           eml_file_path = "edi.1239.3.xml")
 
-# EMLaide::upload_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
-#                             password = Sys.getenv("EDI_PASSWORD"),
-#                             eml_file_path = "edi.1239.2.xml",
-#                             environment = "staging")
+EMLaide::upload_edi_package(user_id = secret_edi_username,
+                            password = secret_edi_password,
+                            eml_file_path = "edi.1136.1.xml",
+                            environment = "staging")
 # EMLaide::update_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
 #                             password = Sys.getenv("EDI_PASSWORD"),
 #                             eml_file_path = "edi.1239.2.xml",
@@ -136,7 +176,8 @@ message("EML Metadata generated")
 #   separate(edi_number, c("edi","package","version"), "\\.") %>%
 #   mutate(version = as.numeric(version) + 1)
 # edi_number <- paste0(update_number$edi, ".", update_number$package, ".", update_number$version)
-
+previous_edi_id <- "1133"
+previous_edi_ver <- "4"
 EMLaide::update_edi_package(user_id = secret_edi_username,
                             password = secret_edi_password,
                             eml_file_path = paste0(getwd(), "/", current_edi_number, ".xml"),
