@@ -4,3 +4,7 @@
 .Ruserdata
 *.DS_Store
 *.mdb
+data/feather_catch.csv
+data/feather_trap.csv
+data/feather_recapture.csv
+data/feather_release.csv
