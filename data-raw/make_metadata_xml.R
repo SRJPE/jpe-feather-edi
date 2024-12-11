@@ -2,15 +2,37 @@ library(EMLaide)
 library(dplyr)
 library(readxl)
 library(EML)
+library(lubridate) # new package added
+library(readr) # new package added
 
 secret_edi_username = Sys.getenv("EDI_USERNAME")
 secret_edi_password = Sys.getenv("EDI_PASSWORD")
 
+# full csv files are too large to save on GitHub. Instead we will filter the
+# csvs to the most current year and compress the full files as a zip
+# The EDI upload will be one zip file with all full csvs and 4 csvs filtered
+# to current year
+
+# monitoring year is month9-8, filter to the current and last year
+current_year <- year(Sys.Date())
+filtered_catch <- read_csv("data/feather_catch.csv") |>
+  filter(year(visitTime) == current_year | year(visitTime) == current_year + 1)
+write_csv(filtered_catch, "data/feather_catch_current_year.csv")
+filtered_trap <- read_csv("data/feather_trap.csv") |>
+  filter(year(visitTime) == current_year | year(visitTime) == current_year + 1)
+write_csv(filtered_trap, "data/feather_trap_current_year.csv")
+filtered_release <- read_csv("data/feather_release.csv") |>
+  filter(year(releaseTime) == current_year | year(releaseTime) == current_year + 1)
+write_csv(filtered_release, "data/feather_release_current_year.csv")
+filtered_recapture <- read_csv("data/feather_recapture.csv") |>
+  filter(year(visitTime) == current_year | year(visitTime) == current_year + 1)
+write_csv(filtered_recapture, "data/feather_recapture_current_year.csv")
+
 datatable_metadata <-
-  dplyr::tibble(filepath = c("data/feather_catch.csv",
-                             "data/feather_recapture.csv",
-                             "data/feather_release.csv",
-                             "data/feather_trap.csv"),
+  dplyr::tibble(filepath = c("data/feather_catch_current_year.csv",
+                             "data/feather_recapture_current_year.csv",
+                             "data/feather_release_current_year.csv",
+                             "data/feather_trap_current_year.csv"),
                 attribute_info = c("data-raw/metadata/feather_catch_metadata.xlsx",
                                    "data-raw/metadata/feather_recapture_metadata.xlsx",
                                    "data-raw/metadata/feather_release_metadata.xlsx",
@@ -20,10 +42,10 @@ datatable_metadata <-
                                           "Release trial summary",
                                           "Daily trap operations"),
                 datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/main/data/",
-                                       c("feather_catch.csv",
-                                         "feather_recapture.csv",
-                                         "feather_release.csv",
-                                         "feather_trap.csv")))
+                                       c("feather_catch_current_year.csv",
+                                         "feather_recapture_current_year.csv",
+                                         "feather_release_current_year.csv",
+                                         "feather_trap_current_year.csv")))
 # save cleaned data to `data/`
 excel_path <- "data-raw/metadata/feather_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
@@ -35,7 +57,7 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 methods_docx <- "data-raw/metadata/methods.md"
 
 #update metadata
-catch_df <- readr::read_csv("data/feather_catch.csv")
+catch_df <- readr::read_csv("data/feather_catch_current_year.csv")
 catch_coverage <- tail(catch_df$visitTime, 1)
 metadata$coverage$end_date <- lubridate::floor_date(catch_coverage, unit = "days")
 
@@ -126,4 +148,4 @@ EMLaide::update_edi_package(user_id = secret_edi_username,
                             password = secret_edi_password,
                             eml_file_path = paste0(getwd(), "/", current_edi_number, ".xml"),
                             existing_package_identifier = paste0("edi.",previous_edi_id, ".", previous_edi_ver, ".xml"),
-                            environment = "production")
+                            environment = "staging")
