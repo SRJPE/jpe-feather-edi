@@ -23,6 +23,7 @@ datatable_metadata <-
                                        "feather_catch.csv"))
 zipped_entity_metadata <- list("file_name" = "feather_catch.zip",
                                "file_type" = "zip",
+                               "file_description" ="zip file",
                                "physical" = create_physical(file_path = "data/feather_catch.zip",
                                                             data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
                                                                               "feather_catch.zip"))
@@ -74,6 +75,14 @@ zipped_entity_metadata <- list("file_name" = c("feather_catch.zip",
                                                                data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
                                                                                  "feather_trap.zip"))
                                               )
+)
+zipped_entity_metadata <- list("file_name" = c("feather_catch.zip"),
+                               "file_description" = c("Daily catch"),
+                               "file_type" = c("zip"),
+                               "physical" = list(create_physical(file_path = "data/feather_catch.zip",
+                                                                 data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241001/data/",
+                                                                                   "feather_catch.zip"))
+                               )
 )
 # # save cleaned data to `data/`
 excel_path <- "data-raw/metadata/feather_metadata.xlsx"
@@ -146,7 +155,7 @@ custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per
                                            "number of days"))
 
 unitList <- EML::set_unitList(custom_units)
-current_edi_number <- "edi.1133.5"
+current_edi_number <- "edi.1133.7"
 eml <- list(packageId = current_edi_number,
             system = "EDI",
             access = add_access(),
@@ -177,7 +186,7 @@ EMLaide::upload_edi_package(user_id = secret_edi_username,
 #   mutate(version = as.numeric(version) + 1)
 # edi_number <- paste0(update_number$edi, ".", update_number$package, ".", update_number$version)
 previous_edi_id <- "1133"
-previous_edi_ver <- "4"
+previous_edi_ver <- "6"
 EMLaide::update_edi_package(user_id = secret_edi_username,
                             password = secret_edi_password,
                             eml_file_path = paste0(getwd(), "/", current_edi_number, ".xml"),
