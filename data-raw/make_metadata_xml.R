@@ -13,26 +13,11 @@ secret_edi_password = Sys.getenv("EDI_PASSWORD")
 # The EDI upload will be one zip file with all full csvs and 4 csvs filtered
 # to current year
 
-# monitoring year is month9-8, filter to the current and last year
-current_year <- year(Sys.Date())
-filtered_catch <- read_csv("data/feather_catch.csv") |>
-  filter(year(visitTime) == current_year | year(visitTime) == current_year + 1)
-write_csv(filtered_catch, "data/feather_catch_current_year.csv")
-filtered_trap <- read_csv("data/feather_trap.csv") |>
-  filter(year(visitTime) == current_year | year(visitTime) == current_year + 1)
-write_csv(filtered_trap, "data/feather_trap_current_year.csv")
-filtered_release <- read_csv("data/feather_release.csv") |>
-  filter(year(releaseTime) == current_year | year(releaseTime) == current_year + 1)
-write_csv(filtered_release, "data/feather_release_current_year.csv")
-filtered_recapture <- read_csv("data/feather_recapture.csv") |>
-  filter(year(visitTime) == current_year | year(visitTime) == current_year + 1)
-write_csv(filtered_recapture, "data/feather_recapture_current_year.csv")
-
 datatable_metadata <-
-  dplyr::tibble(filepath = c("data/feather_catch_current_year.csv",
-                             "data/feather_recapture_current_year.csv",
-                             "data/feather_release_current_year.csv",
-                             "data/feather_trap_current_year.csv"),
+  dplyr::tibble(filepath=c("data/current_year_feather_catch.csv",
+                           "data/current_year_feather_recapture.csv",
+                           "data/current_year_feather_release.csv",
+                           "data/current_year_feather_trap.csv"),
                 attribute_info = c("data-raw/metadata/feather_catch_metadata.xlsx",
                                    "data-raw/metadata/feather_recapture_metadata.xlsx",
                                    "data-raw/metadata/feather_release_metadata.xlsx",
@@ -42,11 +27,17 @@ datatable_metadata <-
                                           "Release trial summary",
                                           "Daily trap operations"),
                 datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/main/data/",
-                                       c("feather_catch_current_year.csv",
-                                         "feather_recapture_current_year.csv",
-                                         "feather_release_current_year.csv",
-                                         "feather_trap_current_year.csv")))
-# save cleaned data to `data/`
+                                       c("current_year_feather_catch.csv",
+                                         "current_year_feather_recapture.csv",
+                                         "current_year_feather_release.csv",
+                                         "current_year_feather_trap.csv")))
+zipped_entity_metadata <- list("file_name" = c("feather.zip"),
+                               "file_description" = c("Zipped folder"),
+                               "file_type" = c("zip"),
+                               "physical" = list(create_physical(file_path = "data/feather.zip",
+                                                                 data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/main/data/",
+                                                                                   "feather.zip")))
+)# save cleaned data to `data/`
 excel_path <- "data-raw/metadata/feather_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
@@ -99,7 +90,8 @@ dataset <- list() %>%
   add_maintenance(metadata$maintenance) %>%
   add_project(metadata$funding) %>%
   add_coverage(metadata$coverage, metadata$taxonomic_coverage) %>%
-  add_datatable(datatable_metadata)
+  add_datatable(datatable_metadata) |>
+  add_other_entity(zipped_entity_metadata)
 
 # GO through and check on all units
 custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish", "days"),
