@@ -26,7 +26,7 @@ datatable_metadata <-
                                           "Recaptured catch",
                                           "Release trial summary",
                                           "Daily trap operations"),
-                datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241212/data/",
+                datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/update-make-xml/data/",
                                        c("current_year_feather_catch.csv",
                                          "current_year_feather_recapture.csv",
                                          "current_year_feather_release.csv",
@@ -35,7 +35,7 @@ zipped_entity_metadata <- c("file_name" = "feather.zip",
                                "file_description" = "Zipped folder",
                                "file_type" = "zip",
                                "physical" = list(create_physical(file_path = "data/feather.zip",
-                                                                 data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241212/data/",
+                                                                 data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/update-make-xml/data/",
                                                                                    "feather.zip")))
 )# save cleaned data to `data/`
 excel_path <- "data-raw/metadata/feather_metadata.xlsx"
