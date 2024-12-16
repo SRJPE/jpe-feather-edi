@@ -26,16 +26,16 @@ datatable_metadata <-
                                           "Recaptured catch",
                                           "Release trial summary",
                                           "Daily trap operations"),
-                datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/main/data/",
+                datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241212/data/",
                                        c("current_year_feather_catch.csv",
                                          "current_year_feather_recapture.csv",
                                          "current_year_feather_release.csv",
                                          "current_year_feather_trap.csv")))
-zipped_entity_metadata <- list("file_name" = c("feather.zip"),
-                               "file_description" = c("Zipped folder"),
-                               "file_type" = c("zip"),
+zipped_entity_metadata <- c("file_name" = "feather.zip",
+                               "file_description" = "Zipped folder",
+                               "file_type" = "zip",
                                "physical" = list(create_physical(file_path = "data/feather.zip",
-                                                                 data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/main/data/",
+                                                                 data_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/feather_20241212/data/",
                                                                                    "feather.zip")))
 )# save cleaned data to `data/`
 excel_path <- "data-raw/metadata/feather_metadata.xlsx"
@@ -48,7 +48,7 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 methods_docx <- "data-raw/metadata/methods.md"
 
 #update metadata
-catch_df <- readr::read_csv("data/feather_catch_current_year.csv")
+catch_df <- readr::read_csv("data/current_year_feather_catch.csv")
 catch_coverage <- tail(catch_df$visitTime, 1)
 metadata$coverage$end_date <- lubridate::floor_date(catch_coverage, unit = "days")
 
@@ -105,7 +105,7 @@ custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per
                                            "number of days"))
 
 unitList <- EML::set_unitList(custom_units)
-
+current_edi_number = "edi.1133.10"
 eml <- list(packageId = current_edi_number,
             system = "EDI",
             access = add_access(),
@@ -135,7 +135,8 @@ message("EML Metadata generated")
 #   separate(edi_number, c("edi","package","version"), "\\.") %>%
 #   mutate(version = as.numeric(version) + 1)
 # edi_number <- paste0(update_number$edi, ".", update_number$package, ".", update_number$version)
-
+previous_edi_id <- "1133"
+previous_edi_ver <- "9"
 EMLaide::update_edi_package(user_id = secret_edi_username,
                             password = secret_edi_password,
                             eml_file_path = paste0(getwd(), "/", current_edi_number, ".xml"),
