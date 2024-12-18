@@ -2,18 +2,11 @@ library(EMLaide)
 library(dplyr)
 library(readxl)
 library(EML)
-library(lubridate) # new package added
-library(readr) # new package added
+library(lubridate)
+library(readr)
 
 secret_edi_username = Sys.getenv("EDI_USERNAME")
 secret_edi_password = Sys.getenv("EDI_PASSWORD")
-print(secret_edi_username)
-
-
-# full csv files are too large to save on GitHub. Instead we will filter the
-# csvs to the most current year and compress the full files as a zip
-# The EDI upload will be one zip file with all full csvs and 4 csvs filtered
-# to current year
 
 datatable_metadata <-
   dplyr::tibble(filepath=c("data/current_year_feather_catch.csv",
@@ -94,12 +87,6 @@ dataset <- list() %>%
   add_coverage(metadata$coverage, metadata$taxonomic_coverage) %>%
   add_datatable(datatable_metadata) |>
   add_other_entity(zipped_entity_metadata)
-
-print("------------------------------------")
-print(dataset$otherEntity)
-print(current_edi_number)
-print(previous_edi_number)
-print("------------------------------------")
 
 # GO through and check on all units
 custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish", "days"),
