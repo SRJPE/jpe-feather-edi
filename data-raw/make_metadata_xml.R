@@ -7,6 +7,8 @@ library(readr) # new package added
 
 secret_edi_username = Sys.getenv("EDI_USERNAME")
 secret_edi_password = Sys.getenv("EDI_PASSWORD")
+print(secret_edi_username)
+
 
 # full csv files are too large to save on GitHub. Instead we will filter the
 # csvs to the most current year and compress the full files as a zip
