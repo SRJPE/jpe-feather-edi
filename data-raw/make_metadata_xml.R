@@ -105,7 +105,7 @@ custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per
                                            "number of days"))
 
 unitList <- EML::set_unitList(custom_units)
-current_edi_number = "edi.1133.10"
+current_edi_number = "edi.1133.14"
 eml <- list(packageId = current_edi_number,
             system = "EDI",
             access = add_access(),
@@ -136,7 +136,7 @@ message("EML Metadata generated")
 #   mutate(version = as.numeric(version) + 1)
 # edi_number <- paste0(update_number$edi, ".", update_number$package, ".", update_number$version)
 previous_edi_id <- "1133"
-previous_edi_ver <- "9"
+previous_edi_ver <- "13"
 EMLaide::update_edi_package(user_id = secret_edi_username,
                             password = secret_edi_password,
                             eml_file_path = paste0(getwd(), "/", current_edi_number, ".xml"),
