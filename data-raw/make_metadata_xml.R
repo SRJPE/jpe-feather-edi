@@ -93,6 +93,8 @@ dataset <- list() %>%
   add_datatable(datatable_metadata) |>
   add_other_entity(zipped_entity_metadata)
 
+print(dataset$otherEntity)
+
 # GO through and check on all units
 custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish", "days"),
                            unitType = c("dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless"),
