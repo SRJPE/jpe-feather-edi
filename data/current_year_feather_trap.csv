@@ -419,7 +419,7 @@ projectDescriptionID,trapVisitID,visitTime,siteName,subSiteName,visitType,fishPr
 2,10457,2024-11-05T09:46:38Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,4275.0,3.5,3.5,Yes,13.0,1.45000004768372
 2,10458,2024-11-06T09:24:06Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,4797.0,3.29999995231628,3.40000009536743,Yes,13.0,1.01999998092651
 2,10459,2024-11-07T10:08:37Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5130.0,3.20000004768372,3.29999995231628,Yes,13.0,0.639999985694885
-2,10460,2024-11-08T09:50:05Z,Eye Riffle,Eye riffle_north,End trapping,Processed fish,Trap functioning normally,,3.29999995231628,,Yes,14.0,1.29999995231628
+2,10460,2024-11-08T09:50:05Z,Eye Riffle,Eye riffle_north,End trapping,Processed fish,Trap functioning normally,4607.0,3.29999995231628,,Yes,14.0,1.29999995231628
 2,10461,2024-11-11T08:27:09Z,Eye Riffle,Eye riffle_north,Start trap & begin trapping,Not applicable,Trap functioning normally,,,3.5,Yes,13.0,1.50999999046326
 2,10462,2024-11-12T12:45:41Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5795.0,3.29999995231628,3.40000009536743,Yes,13.5,0.870000004768372
 2,10463,2024-11-13T09:27:44Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,4180.0,3.40000009536743,3.40000009536743,Yes,12.5,0.759999990463257
@@ -431,3 +431,53 @@ projectDescriptionID,trapVisitID,visitTime,siteName,subSiteName,visitType,fishPr
 2,10469,2024-11-21T10:20:36Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,4940.0,3.5,3.5,Yes,12.5,1.47000002861023
 2,10470,2024-11-22T13:15:02Z,Eye Riffle,Eye riffle_north,End trapping,Processed fish,Trap functioning normally,6127.0,3.70000004768372,,Yes,13.0,4.0
 2,10471,2024-11-25T09:38:05Z,Eye Riffle,Eye riffle_north,Start trap & begin trapping,Not applicable,Trap functioning normally,,,3.59999990463257,Yes,13.0,11.3999996185303
+2,10472,2024-11-26T11:00:39Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5557.0,3.20000004768372,3.40000009536743,Yes,13.0,12.3999996185303
+2,10473,2024-11-27T13:25:59Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5605.0,3.70000004768372,3.5,Yes,,15.3000001907349
+2,10474,2024-11-28T11:00:45Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,4702.0,3.70000004768372,3.59999990463257,Yes,13.0,9.89999961853027
+2,10475,2024-11-29T11:02:18Z,Eye Riffle,Eye riffle_north,End trapping,Processed fish,Trap functioning normally,5272.0,3.5,,Yes,12.0,5.98000001907349
+2,10487,2024-12-02T12:00:20Z,Herringer Riffle,Herringer_east,Start trap & begin trapping,Not applicable,Trap functioning normally,,,5.09999990463257,Yes,13.0,3.03999996185303
+2,10498,2024-12-02T12:35:56Z,Herringer Riffle,Herringer_Upper_west,Start trap & begin trapping,No fish were caught,Trap functioning normally,10320.0,,4.40000009536743,Yes,13.0,3.03999996185303
+2,10476,2024-12-02T13:38:38Z,Eye Riffle,Eye riffle_north,Start trap & begin trapping,Not applicable,Trap functioning normally,,,3.59999990463257,Yes,13.0,3.16000008583069
+2,10499,2024-12-03T09:20:15Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,5272.0,4.19999980926514,4.19999980926514,Yes,,1.28999996185303
+2,10488,2024-12-03T09:36:17Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,6792.0,5.30000019073486,5.19999980926514,Yes,,1.28999996185303
+2,10477,2024-12-03T11:23:23Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,4797.0,3.59999990463257,4.0,Yes,11.0,3.35999989509583
+2,10500,2024-12-04T09:04:54Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,5937.0,4.40000009536743,4.40000009536743,Yes,8.0,1.52999997138977
+2,10489,2024-12-04T09:15:50Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,7457.0,5.30000019073486,5.40000009536743,Yes,8.0,1.52999997138977
+2,10478,2024-12-04T11:39:17Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5272.0,3.29999995231628,3.5,Yes,11.0,2.6800000667572
+2,10479,2024-12-05T09:51:40Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,4702.0,3.59999990463257,3.59999990463257,Yes,11.0,4.19999980926514
+2,10501,2024-12-05T11:20:35Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,6650.0,4.0,4.30000019073486,Yes,9.0,2.40000009536743
+2,10490,2024-12-05T11:47:44Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,8312.0,5.09999990463257,5.30000019073486,Yes,9.0,2.40000009536743
+2,10480,2024-12-06T12:35:54Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5795.0,3.59999990463257,3.59999990463257,Yes,12.0,3.03999996185303
+2,10502,2024-12-06T14:19:10Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,6602.0,4.19999980926514,4.30000019073486,Yes,,1.82000005245209
+2,10491,2024-12-06T14:19:55Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,8265.0,5.5,5.30000019073486,Yes,,1.82000005245209
+2,10492,2024-12-07T08:33:30Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,5890.0,5.30000019073486,5.0,Yes,8.5,3.67000007629395
+2,10503,2024-12-07T08:33:39Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,4655.0,4.30000019073486,4.19999980926514,Yes,8.5,3.67000007629395
+2,10481,2024-12-07T10:56:30Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,4750.0,3.70000004768372,3.59999990463257,Yes,8.0,4.17999982833862
+2,10482,2024-12-08T11:00:40Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5130.0,3.59999990463257,3.70000004768372,Yes,11.0,3.02999997138977
+2,10504,2024-12-08T12:37:59Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,6602.0,4.0,4.09999990463257,Yes,9.0,2.0699999332428
+2,10493,2024-12-08T12:42:35Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,8122.0,5.30000019073486,5.40000009536743,Yes,9.0,2.0699999332428
+2,10505,2024-12-09T10:50:01Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,5225.0,4.09999990463257,4.09999990463257,Yes,8.5,2.6800000667572
+2,10494,2024-12-09T11:15:41Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning but not normally,6840.0,5.09999990463257,5.09999990463257,Yes,8.5,2.6800000667572
+2,10483,2024-12-09T13:15:55Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5462.0,3.59999990463257,3.59999990463257,Yes,11.0,3.51999998092651
+2,10495,2024-12-10T09:36:08Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,6792.0,5.0,5.09999990463257,Yes,8.5,2.28999996185303
+2,10506,2024-12-10T09:43:18Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,5225.0,4.0,3.90000009536743,Yes,8.5,2.28999996185303
+2,10484,2024-12-10T14:14:26Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5177.0,3.0,3.59999990463257,Yes,10.5,3.05999994277954
+2,10507,2024-12-11T10:03:19Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,5462.0,3.79999995231628,3.59999990463257,Yes,8.0,1.5
+2,10496,2024-12-11T10:10:21Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,7267.0,5.0,5.19999980926514,Yes,8.0,1.5
+2,10485,2024-12-11T12:19:07Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,4655.0,3.40000009536743,3.40000009536743,Yes,10.0,2.95000004768372
+2,10497,2024-12-12T10:20:47Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,7172.0,5.09999990463257,5.19999980926514,Yes,9.0,2.1800000667572
+2,10508,2024-12-12T10:25:58Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,5557.0,3.70000004768372,4.40000009536743,Yes,9.0,2.1800000667572
+2,10486,2024-12-12T12:03:31Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5130.0,3.59999990463257,3.59999990463257,Yes,10.0,2.75999999046326
+2,10513,2024-12-13T09:05:04Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,4940.0,3.29999995231628,3.5,Yes,9.0,2.20000004768372
+2,10517,2024-12-13T09:12:10Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,6792.0,4.80000019073486,4.90000009536743,Yes,9.0,2.20000004768372
+2,10509,2024-12-13T09:31:40Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,4607.0,3.5,3.59999990463257,Yes,11.0,3.24000000953674
+2,10510,2024-12-14T10:15:18Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5320.0,3.90000009536743,3.79999995231628,Yes,11.0,3.82999992370605
+2,10514,2024-12-14T12:05:20Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,6032.0,3.09999990463257,4.0,Yes,8.0,1.87999999523163
+2,10518,2024-12-14T12:10:55Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,7980.0,5.19999980926514,5.09999990463257,Yes,8.0,1.87999999523163
+2,10511,2024-12-15T11:51:57Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5700.0,3.70000004768372,3.5,Yes,12.0,5.21999979019165
+2,10515,2024-12-15T13:25:27Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,15722.0,3.90000009536743,4.09999990463257,Yes,9.0,3.94000005722046
+2,10519,2024-12-15T13:35:19Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,7695.0,5.90000009536743,4.90000009536743,Yes,9.0,3.94000005722046
+2,10516,2024-12-16T09:57:03Z,Herringer Riffle,Herringer_Upper_west,Continue trapping,Processed fish,Trap functioning normally,5463.0,3.79999995231628,3.20000004768372,Yes,8.5,3.40000009536743
+2,10520,2024-12-16T10:14:43Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,5985.0,5.0,4.69999980926514,Yes,8.5,3.40000009536743
+2,10512,2024-12-16T11:41:07Z,Eye Riffle,Eye riffle_north,Continue trapping,Processed fish,Trap functioning normally,5130.0,3.20000004768372,3.70000004768372,Yes,11.0,4.80000019073486
+2,10521,2024-12-17T09:45:39Z,Herringer Riffle,Herringer_east,Continue trapping,Processed fish,Trap functioning normally,6745.0,4.80000019073486,4.80000019073486,Yes,8.0,2.0
