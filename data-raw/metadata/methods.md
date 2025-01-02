@@ -1,3 +1,5 @@
+Note that data from the current year are uploaded as csvs. Full data files are available in the zip file.
+
 ## Trap equipment
 
 Three 8-foot rotary screw traps were used.
