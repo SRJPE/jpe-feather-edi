@@ -8,28 +8,50 @@ library(readr)
 secret_edi_username = Sys.getenv("EDI_USERNAME")
 secret_edi_password = Sys.getenv("EDI_PASSWORD")
 
-datatable_metadata <-
-  dplyr::tibble(filepath=c("data/current_year_feather_catch.csv",
-                           "data/current_year_feather_recapture.csv",
-                           "data/current_year_feather_release.csv",
-                           "data/current_year_feather_releasefish.csv",
-                           "data/current_year_feather_trap.csv"),
-                attribute_info = c("data-raw/metadata/feather_catch_metadata.xlsx",
-                                   "data-raw/metadata/feather_recapture_metadata.xlsx",
-                                   "data-raw/metadata/feather_release_metadata.xlsx",
-                                   "data-raw/metadata/feather_release_fish_metadata.xlsx",
-                                   "data-raw/metadata/feather_trap_metadata.xlsx"),
-                datatable_description = c("Daily catch",
-                                          "Recaptured catch",
-                                          "Release trial summary",
-                                          "Release fish trial summary",
-                                          "Daily trap operations"),
-                datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/main/data/",
-                                       c("current_year_feather_catch.csv",
-                                         "current_year_feather_recapture.csv",
-                                         "current_year_feather_release.csv",
-                                         "current_year_feather_releasefish.csv",
-                                         "current_year_feather_trap.csv")))
+datatable_metadata <- dplyr::tibble(
+  filepath = character(),
+  attribute_info = character(),
+  datatable_description = character(),
+  datatable_url = character()
+)
+file_list = c("current_year_feather_catch.csv",
+             "current_year_feather_recapture.csv",
+             "current_year_feather_release.csv",
+             "current_year_feather_releasefish.csv",
+             "current_year_feather_trap.csv")
+metadata_info = c("data-raw/metadata/feather_catch_metadata.xlsx",
+                    "data-raw/metadata/feather_recapture_metadata.xlsx",
+                    "data-raw/metadata/feather_release_metadata.xlsx",
+                    "data-raw/metadata/feather_release_fish_metadata.xlsx",
+                    "data-raw/metadata/feather_trap_metadata.xlsx")
+description = c("Daily catch",
+                 "Recaptured catch",
+                 "Release trial summary",
+                 "Release fish summary",
+                 "Daily trap operations")
+url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/main/data/",
+                       c("current_year_feather_catch.csv",
+                         "current_year_feather_recapture.csv",
+                         "current_year_feather_release.csv",
+                         "current_year_feather_releasefish.csv",
+                         "current_year_feather_trap.csv"))
+for (i in seq_along(file_list)){
+  x <- read_csv(paste0("data/",file_list[i]))
+  if (nrow(x) > 0){
+    filepath <- paste0("data/", file_list[i])
+    attribute_info <- metadata_info[i]
+    datatable_description <- description[i]
+    datatable_url <- url[i]
+
+    datatable_metadata <- bind_rows(
+      datatable_metadata,
+      dplyr::tibble(filepath = filepath,
+                    attribute_info = attribute_info,
+                    datatable_description = datatable_description,
+                    datatable_url = datatable_url)
+    )
+  }
+}
 zipped_entity_metadata <- c("file_name" = "feather.zip",
                                "file_description" = "Zipped folder",
                                "file_type" = "zip",
@@ -48,6 +70,7 @@ methods_docx <- "data-raw/metadata/methods.md"
 
 #update metadata
 catch_df <- readr::read_csv(unzip("data/feather.zip", "feather_catch.csv"))
+# catch_df <- readr::read_csv("data/current_year_feather_catch.csv")
 catch_coverage <- tail(catch_df$visitTime, 1)
 metadata$coverage$end_date <- lubridate::floor_date(catch_coverage, unit = "days")
 
@@ -104,7 +127,7 @@ custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per
                                            "number of days"))
 
 unitList <- EML::set_unitList(custom_units)
-# current_edi_number = "edi.1133.14"
+current_edi_number = "edi.1133.26"
 eml <- list(packageId = current_edi_number,
             system = "EDI",
             access = add_access(),
@@ -135,7 +158,7 @@ message("EML Metadata generated")
 #   mutate(version = as.numeric(version) + 1)
 # edi_number <- paste0(update_number$edi, ".", update_number$package, ".", update_number$version)
 # previous_edi_id <- "1133"
-# previous_edi_ver <- "13"
+# previous_edi_ver <- "25"
 EMLaide::update_edi_package(user_id = secret_edi_username,
                             password = secret_edi_password,
                             eml_file_path = paste0(getwd(), "/", current_edi_number, ".xml"),
