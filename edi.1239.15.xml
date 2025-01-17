@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="edi.1239.15" system="EDI" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <access authSystem="https://pasta.edirepository.org/authentication" order="allowFirst" scope="document">
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+    <allow>
+      <principal>cvpia</principal>
+      <permission>write</permission>
+    </allow>
+  </access>
+  <dataset>
+    <shortName>Feather River RST</shortName>
+    <title>Monitoring juvenile Chinook salmon outmigration using rotary screw traps on Feather River</title>
+    <creator>
+      <individualName>
+        <givenName>Jason</givenName>
+        <surName>Kindopp</surName>
+      </individualName>
+      <organizationName>California Department of Water Resources</organizationName>
+      <electronicMailAddress>jason.kindopp@water.ca.gov</electronicMailAddress>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>Kassie</givenName>
+        <surName>Hickey</surName>
+      </individualName>
+      <organizationName>California Department of Water Resources</organizationName>
+      <electronicMailAddress>kassie.hickey@water.ca.gov</electronicMailAddress>
+      <role>principal investigator</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Ryon</givenName>
+        <surName>Kurth</surName>
+      </individualName>
+      <organizationName>California Department of Water Resources</organizationName>
+      <electronicMailAddress>Ryon.kurth@water.ca.gov</electronicMailAddress>
+      <role>associate</role>
+    </associatedParty>
+    <pubDate>2025-01-17</pubDate>
+    <abstract>
+      <para>
+    California Department of Water Resources (DWR) currently operates
+    multiple eight-foot rotary screw traps (RSTs) in both the Low Flow
+    Channel (LFC) and High Flow Channel (HFC) of the upper 21.5 river
+    miles of the Lower Feather River. The LFC extends from the Fish
+    Barrier Dam at river mile (RM) 67.2 to the Thermalito Outlet (RM
+    59). The HFC extends from the Thermalito Outlet to the confluence
+    with the Sacramento River. This survey has been ongoing since 1997
+    with the objective of documenting general salmonid emigration
+    attributes, such as timing, abundance and composition of salmon and
+    investigating the influence of environmental factors thought to
+    initiate emigration, such as flow, turbidity and water temperature.
+    Data from this monitoring will also be used to inform the
+    development of a juvenile production estimate (JPE) for spring-run
+    Chinook salmon in the Sacramento River Watershed as required by
+    Incidental Take Permit No. 2081-2019-006-00 issued by CA Department
+    of Fish and Wildlife (CDFW) to DWR for the long-term operation of
+    the State Water Project. Data within the current year’s monitoring
+    season are considered provisional.
+  </para>
+    </abstract>
+    <keywordSet>
+      <keyword>spring run</keyword>
+      <keyword>fall run</keyword>
+      <keyword>trap</keyword>
+      <keyword>catch</keyword>
+      <keyword>juvenile production estimate</keyword>
+      <keyword>Oncorhynchus tshawytscha</keyword>
+      <keyword>RST</keyword>
+      <keyword>California</keyword>
+      <keyword>Central Valley</keyword>
+    </keywordSet>
+    <intellectualRights>
+      <para>This data package is released to the "public domain" under Creative Commons CC0 1.0 "No Rights Reserved" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein "website") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available "as is" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.</para>
+    </intellectualRights>
+    <licensed>
+      <licenseName>Creative Commons Zero v1.0 Universal</licenseName>
+      <url>https://spdx.org/licenses/CC0-1.0.html</url>
+      <identifier>CC0-1.0</identifier>
+    </licensed>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Feather River Rotary Screw Trap</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-121.6326</westBoundingCoordinate>
+          <eastBoundingCoordinate>-121.6046</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.4621</northBoundingCoordinate>
+          <southBoundingCoordinate>39.2122</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>1997-12-22</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2024-12-17</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>kingdom</taxonRankName>
+          <taxonRankValue>Animalia</taxonRankValue>
+          <taxonomicClassification>
+            <taxonRankName>phylum</taxonRankName>
+            <taxonRankValue>Chordata</taxonRankValue>
+            <taxonomicClassification>
+              <taxonRankName>class</taxonRankName>
+              <taxonRankValue>Teleostei</taxonRankValue>
+              <taxonomicClassification>
+                <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Salmoniformes</taxonRankValue>
+                <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                  <taxonRankValue>Salmonidae</taxonRankValue>
+                  <taxonomicClassification>
+                    <taxonRankName>genus</taxonRankName>
+                    <taxonRankValue>Oncorhynchus</taxonRankValue>
+                    <taxonomicClassification>
+                      <taxonRankName>species</taxonRankName>
+                      <taxonRankValue>Oncorhynchus tshawytscha</taxonRankValue>
+                      <commonName>Chinook Salmon</commonName>
+                      <taxonId provider="https://itis.gov">161980</taxonId>
+                    </taxonomicClassification>
+                  </taxonomicClassification>
+                </taxonomicClassification>
+              </taxonomicClassification>
+            </taxonomicClassification>
+          </taxonomicClassification>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <maintenance>
+      <description>ongoing</description>
+      <maintenanceUpdateFrequency>monthly</maintenanceUpdateFrequency>
+    </maintenance>
+    <contact>
+      <individualName>
+        <givenName>Jason</givenName>
+        <surName>Kindopp</surName>
+      </individualName>
+      <organizationName>California Department of Water Resources</organizationName>
+      <electronicMailAddress>jason.kindopp@water.ca.gov</electronicMailAddress>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <section>
+            <title>Trap equipment</title>
+            <para>
+      Three 8-foot rotary screw traps were used.
+    </para>
+          </section>
+          <section>
+            <title>Current trap locations</title>
+            <para>
+      Theree are two curent trap locations: Low Flow Channel (1 RST at
+      Eye Riffle site near RM 60.2) and High Flow Channel (2 RSTs in
+      tandem at Herringer Riffle near RM 45.7).
+    </para>
+          </section>
+          <section>
+            <title>Historical trap locations</title>
+            <para>
+      Low Flow Channel historical trap locations are Steep Riffle site
+      near RM 61 and Gateway Riffle site near RM 59.5.
+    </para>
+            <para>
+      High Flow Channel historical trap locations are Live Oak site near
+      RM 42 and Sunset Pumps site near RM 38.
+    </para>
+          </section>
+          <section>
+            <title>Monitoring schedule</title>
+            <para>
+      From November to July. Continuously trapping except under high
+      flows and unsafe working conditions. Serviced daily within a
+      24-hour period, more if needed due to high debris amounts or fish
+      catch
+    </para>
+          </section>
+          <section>
+            <title>Daily environmental data</title>
+            <para>
+      Daily environmental data collected are water temperature (Celsius)
+      and turbidity (Nephelometric Turbidity Units).
+    </para>
+          </section>
+          <section>
+            <title>Fish measurements</title>
+            <para>
+      Fork length measurements to nearest mm taken for Chinook (50
+      randomly selected of each run type, run determined by Greene 1992
+      Length-at-Date chart), Steelhead (first 50), and non-salmonids (up
+      to 20).
+    </para>
+          </section>
+          <section>
+            <title>Fish counts</title>
+            <para>
+      All fish not measured are plus counted by hand. If juvenile salmon
+      are highly abundant, a simple volume displacement method is used
+      to count fall-run Chinook in increments of 500-1,000 or more to
+      speed up processing. Efforts are made to ensure welfare of fish is
+      maintained during capture and handling; however, fish may be
+      affected by other pathogens and disease which may increase the
+      possibility of mortality.
+    </para>
+          </section>
+          <section>
+            <title>Trap efficiency trials</title>
+            <para>
+      Natural origin fall-run captured in RSTs are the primary source of
+      released fish. At least once weekly December-April across variable
+      flow and environmental conditions as catch totals allow. A minimum
+      of 3 consecutive days of fishing after the release date is
+      required for a release to be included in analysis. Mortality
+      between the release point and the trap is assumed to be
+      negligible. Release site approximately 0.5 miles upstream of each
+      trap site.
+    </para>
+          </section>
+          <section>
+            <title>Trap efficiency mark rotation</title>
+            <para>
+      Fish are marked with a colored Visible Implant Elastomer (VIE),
+      and/or a Bismarck brown Y (BBY) whole body stain. Elastomer colors
+      and/or marking locations on the fish are used to create unique
+      marks. A unique mark is not used again for 7 days to ensure
+      release groups of the same mark do not overlap.
+    </para>
+          </section>
+          <para>
+    Note that data from the current year are uploaded as csvs. Full data
+    files are available in the zip file.
+  </para>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>Monitoring juvenile Chinook salmon outmigration using rotary screw traps on Feather River</title>
+      <personnel>
+        <individualName>
+          <givenName>Jason</givenName>
+          <surName>Kindopp</surName>
+        </individualName>
+        <organizationName>California Department of Water Resources</organizationName>
+        <electronicMailAddress>jason.kindopp@water.ca.gov</electronicMailAddress>
+        <role>Project Lead</role>
+      </personnel>
+    </project>
+    <otherEntity>
+      <entityName>feather.zip</entityName>
+      <entityDescription>Zipped folder</entityDescription>
+      <physical>
+        <objectName>feather.zip</objectName>
+        <size unit="bytes">2735832</size>
+        <authentication method="MD5">f8231b34f9133fa413a2ad67a6fa5ea6</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-feather-edi/main/data/feather.zip</url>
+          </online>
+        </distribution>
+      </physical>
+      <entityType>zip</entityType>
+    </otherEntity>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="number of rotations" name="number of rotations" unitType="dimensionless">
+          <description>number of rotations</description>
+        </unit>
+        <unit id="NTU" name="NTU" unitType="dimensionless">
+          <description>nephelometric turbidity units, common unit for measuring turbidity</description>
+        </unit>
+        <unit id="revolutions per minute" name="revolutions per minute" unitType="dimensionless">
+          <description>number of revolutions per minute</description>
+        </unit>
+        <unit id="number of fish" name="number of fish" unitType="dimensionless">
+          <description>number of fish counted</description>
+        </unit>
+        <unit id="days" name="days" unitType="dimensionless">
+          <description>number of days</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
