@@ -1,1 +1,1 @@
-projectDescriptionID,releaseID,releaseTime,commonName,markedRun,markedFishOrigin,sourceOfFishSite,releaseSite,releaseSubSite,nReleased,testDays,appliedMarkType,appliedMarkColor,appliedMarkPosition,appliedMarkCode,IncludeInAnalysis
+projectDescriptionID,releaseFishID,releaseID,forkLength
