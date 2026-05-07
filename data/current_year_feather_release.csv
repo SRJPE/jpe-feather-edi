@@ -1,11 +1,11 @@
 projectDescriptionID,releaseID,releaseTime,commonName,markedRun,markedFishOrigin,sourceOfFishSite,releaseSite,releaseSubSite,nReleased,testDays,appliedMarkType,appliedMarkColor,appliedMarkPosition,appliedMarkCode,IncludeInAnalysis
-2,962,2026-01-01T08:30:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1306,14,Elastomer,Orange,Nose,,Yes
-2,964,2026-01-08T13:02:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,777,7,Elastomer,Blue,Nose,,Yes
-2,965,2026-01-13T09:30:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1488,7,Elastomer,White,Nose,,Yes
+2,962,2026-01-01T08:30:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1306,15,Elastomer,Orange,Nose,,Yes
+2,964,2026-01-08T13:02:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,777,7,Elastomer,Blue,Nose,,No
+2,965,2026-01-13T09:30:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1488,14,Elastomer,White,Nose,,Yes
 2,966,2026-01-13T12:20:00Z,Chinook salmon,Fall,Natural,Herringer Riffle,Herringer_release site,half mile above trap RM,1968,7,Elastomer,Green,Nose,,Yes
-2,967,2026-01-15T13:15:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1960,7,Elastomer,Orange,Nose,,Yes
-2,967,2026-01-15T13:15:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1960,7,Pigment / dye,Yellow,Whole body,,Yes
-2,968,2026-01-21T11:34:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1490,7,Elastomer,Yellow,Nose,,Yes
+2,967,2026-01-15T13:15:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1960,10,Elastomer,Orange,Nose,,Yes
+2,967,2026-01-15T13:15:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1960,10,Pigment / dye,Yellow,Whole body,,Yes
+2,968,2026-01-21T11:34:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1490,15,Elastomer,Yellow,Nose,,Yes
 2,969,2026-01-22T08:56:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1111,7,Elastomer,White,Nose,,Yes
 2,970,2026-01-27T12:30:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1416,7,Elastomer,Orange,Nose,,Yes
 2,971,2026-01-29T12:22:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,924,7,Elastomer,Blue,Nose,,Yes
@@ -16,3 +16,12 @@ projectDescriptionID,releaseID,releaseTime,commonName,markedRun,markedFishOrigin
 2,976,2026-01-29T09:20:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Herringer_release site,half mile above trap RM,1625,7,Elastomer,Yellow,Nose,,Yes
 2,977,2026-02-19T13:22:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Eye riffle_release site,Below Weir Riffle,964,7,Elastomer,White,Nose,,Yes
 2,978,2026-02-19T11:01:00Z,Chinook salmon,Fall,Natural,Eye Riffle,Herringer_release site,half mile above trap RM,1030,7,Elastomer,Green,Nose,,Yes
+2,979,2026-04-01T15:23:00Z,Chinook salmon,Fall,Hatchery,Eye Riffle,Eye riffle_release site,Below Weir Riffle,1279,7,Elastomer,Pink,Nose,,Yes
+2,980,2026-04-01T11:12:00Z,Chinook salmon,Fall,Hatchery,,Herringer_release site,half mile above trap RM,1500,7,Elastomer,Yellow,Nose,,No
+2,981,2026-04-07T11:25:00Z,Chinook salmon,Fall,Hatchery,,Eye riffle_release site,Below Weir Riffle,1023,8,Elastomer,White,Nose,,Yes
+2,982,2026-04-09T10:30:00Z,Chinook salmon,Fall,Hatchery,,Herringer_release site,half mile above trap RM,880,7,Elastomer,Green,Nose,,No
+2,983,2026-04-14T13:00:00Z,Chinook salmon,Fall,Hatchery,,Eye riffle_release site,Below Weir Riffle,1005,7,Elastomer,Blue,Nose,,Yes
+2,984,2026-04-21T12:03:00Z,Chinook salmon,Fall,Hatchery,,Eye riffle_release site,Below Weir Riffle,1000,7,Elastomer,White,Nose,,Yes
+2,985,2026-04-28T12:27:00Z,Chinook salmon,Fall,Hatchery,,Eye riffle_release site,Below Weir Riffle,995,7,Elastomer,Orange,Nose,,Yes
+2,986,2026-04-15T11:00:00Z,Chinook salmon,Fall,Hatchery,,Herringer_release site,half mile above trap RM,1951,7,Elastomer,Yellow,Nose,,Yes
+2,987,2026-04-23T10:21:00Z,Chinook salmon,Fall,Hatchery,,Herringer_release site,half mile above trap RM,1769,7,Elastomer,Green,Nose,,Yes
