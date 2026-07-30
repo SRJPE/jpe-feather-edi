@@ -5,8 +5,7 @@ library(EML)
 library(lubridate)
 library(readr)
 
-secret_edi_username = Sys.getenv("EDI_USERNAME")
-secret_edi_password = Sys.getenv("EDI_PASSWORD")
+secret_edi_api_key = Sys.getenv("EDI_ACCESS_KEY")
 
 datatable_metadata <- dplyr::tibble(
   filepath = character(),
@@ -81,7 +80,7 @@ for (sheet_name in names(metadata)) {
 }
 openxlsx::saveWorkbook(wb, file = excel_path, overwrite=TRUE)
 
-#edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
+#edi_number <- reserve_edi_id(api_key = Sys.getenv("EDI_ACCESS_KEY"))
 # edi_number <- "edi.1239.2"
 
 # Version log for tracking EDI number and versions
@@ -138,16 +137,13 @@ EML::write_eml(eml, paste0(current_edi_number, ".xml"))
 message("EML Metadata generated")
 #EML::eml_validate("edi.1239.2.xml")
 
-# EMLaide::evaluate_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
-#                                           password = Sys.getenv("EDI_PASSWORD"),
-#                                           eml_file_path = "edi.1239.3.xml")
+# EMLaide::evaluate_edi_package(api_key = Sys.getenv("EDI_ACCESS_KEY"),
+#                               eml_file_path = "edi.1239.3.xml")
 
-# EMLaide::upload_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
-#                             password = Sys.getenv("EDI_PASSWORD"),
+# EMLaide::upload_edi_package(api_key = Sys.getenv("EDI_ACCESS_KEY"),
 #                             eml_file_path = "edi.1239.2.xml",
 #                             environment = "staging")
-# EMLaide::update_edi_package(user_id = Sys.getenv("EDI_USER_ID"),
-#                             password = Sys.getenv("EDI_PASSWORD"),
+# EMLaide::update_edi_package(api_key = Sys.getenv("EDI_ACCESS_KEY"),
 #                             eml_file_path = "edi.1239.2.xml",
 #                             existing_package_identifier = "edi.1239.1")
 # doc <- read_xml("edi.1239.1.xml")
@@ -159,8 +155,7 @@ message("EML Metadata generated")
 # previous_edi_id <- "1133"
 # previous_edi_ver <- "25"
 print(paste0("Current EDI Number:", current_edi_number))
-EMLaide::update_edi_package(user_id = secret_edi_username,
-                            password = secret_edi_password,
+EMLaide::update_edi_package(api_key = secret_edi_api_key,
                             eml_file_path = paste0(getwd(), "/", current_edi_number, ".xml"),
-                            existing_package_identifier = paste0("edi.",previous_edi_id, ".", previous_edi_ver, ".xml"),
+                            existing_package_identifier = paste0("edi.", previous_edi_id, ".", previous_edi_ver),
                             environment = "production")
