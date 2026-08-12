@@ -39,7 +39,7 @@
       <electronicMailAddress>Ryon.kurth@water.ca.gov</electronicMailAddress>
       <role>associate</role>
     </associatedParty>
-    <pubDate>2026-07-30</pubDate>
+    <pubDate>2026-08-12</pubDate>
     <abstract>
       <para>
     California Department of Water Resources (DWR) currently operates
@@ -1343,7 +1343,7 @@
       <physical>
         <objectName>feather.zip</objectName>
         <size unit="bytes">3044245</size>
-        <authentication method="MD5">e3d1f3d0836bc829dd48999a84aaeae2</authentication>
+        <authentication method="MD5">a50c95dc92cf5ef0ba791aa749c5e7e0</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
